@@ -1,0 +1,45 @@
+const SingIn = {
+    render() {
+        return /* html */ `
+     
+
+    <div class="min-h-screen flex items-center justify-center">
+        
+        <div class="bg-white p-16 rounded shadow-2xl w-2/3">
+            <h2 class="text-3xl font-bold mb-10 text-gray-800">Login</h2>
+            <form class="space-y-5" id="formSignup">
+            
+            <div>
+                <label class="block mb-1 font-bold text-gray-500">Email</label>
+                <input type="email" class="w-full border-2 border-gray-200 p-3 rounded outline-none focus:border-purple-500" id="email">
+            </div>
+            <div>
+                <label class="block mb-1 font-bold text-gray-500">Password</label>
+                <input type="password" class="w-full border-2 border-gray-200 p-3 rounded outline-none focus:border-purple-500" id="password">
+            </div>
+            
+           
+            <div class="flex items-center justify-between ">
+                        <div class="flex items-center">
+                            <input id="remember-me" name="remember-me" type="checkbox" class="h-4 w-4 text-indigo-600 focus:ring-indigo-500 border-gray-300 rounded">
+                                <label for="remember-me" class="ml-2 block text-sm text-gray-900">
+                                    Remember me
+                                </label>
+                        </div>
+                        <div class="text-sm">
+                            <a href="#" class="font-medium text-indigo-600 hover:text-indigo-500">
+                                Forgot your password?
+                            </a>
+                        </div>
+                    </div>
+            <button class="block w-full bg-red-600 hover:bg-red-300 p-4 rounded text-white hover:text-red-800 transition duration-300">Sign In</button>
+            </form>
+        </div>
+        </div>
+
+       
+
+        `;
+    }
+}
+export default SingIn

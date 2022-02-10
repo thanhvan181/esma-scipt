@@ -1,0 +1,14 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@1,300&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* svg {
+    @apply width: 34px;
+} */
+@layer components{
+    .size-selector input:checked + label{
+        @apply bg-primary text-white;
+    }
+}
