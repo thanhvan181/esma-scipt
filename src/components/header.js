@@ -3,10 +3,9 @@ const Header = {
         return /* html */ `
         <header class="bg-white py-4 shadow-sm">
       <div class="container flex items-center justify-between">
-        <a href="" class="grid grid-cols-2">
-          <img src="./src/images/logo.png" alt="" class="w-20 h-20" />
-          <span class="pt-8 ">FPT Polytechnic</span>
-         
+        <a href="">
+          <img src="./src/images/logo.png" alt="" class="w-30 h-20" />
+          
 
         </a>
         <div class="relative flex w-full max-w-xl">

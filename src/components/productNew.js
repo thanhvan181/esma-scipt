@@ -17,7 +17,7 @@ const ProductNew = {
                  <div class="group overflow-hidden rounded bg-white shadow">
             <div class="relative  table-row-group">
               <div class="box-border h-100 w-100 p-4 border-4 img-container ">
-                <img src="${product.image}" alt="" class="w-full  inline-block align-middle h-full" />
+                <img src="${product.image}" alt="" class=" h-40 w-auto w-72"  />
 
               </div>
                

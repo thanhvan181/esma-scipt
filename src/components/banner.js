@@ -1,24 +1,21 @@
 const Banner = {
     render() {
         return /* html */ `
-         <div class="bg-cover bg-no-repeat bg-center py-36 " style="background-image: url('./src/images/slide-img-2.jpg') ;">
-    <div class="container">
-      <h1 class="text-6xl text-gray-800 font-medium mb-4 capitalize">
-      
-          best colleciton for home decoration
-      
-
-      </h1>
-      <p> 
-        Lorem ipsim dolor sit amet, consectetur adipisicing elet. 
-
-      </p>
-      <div class="mt-12">
-        <a href="" class="bg-primary border border-primary text-white px-8 py-3 font-medium rounded-md hover:bg-transparent hover:text-primary transition">Shop Now</a>
+         <div class="container">
+     <div class="md:flex md:flex-row mt-20">
+      <div class="md:w-2/5 flex flex-col justify-center items-center">
+        <h2 class="font-serif text-5xl text-gray-600 mb-4 text-center md:self-start md:text-left">Some Catchy Title Here</h2>
+        <p class="uppercase text-gray-600 tracking-wide text-center md:self-start md:text-left">Our brand tagline goes here.</p>
+        <p class="uppercase text-gray-600 tracking-wide text-center md:self-start md:text-left">Our brand motto goes here.</p>
+        <a href="#" class="bg-gradient-to-r from-red-600 to-pink-500 rounded-full py-4 px-8 text-gray-50 uppercase text-xl md:self-start my-5">Shop Now</a>
       </div>
-
+      <div class="md:w-3/5">
+        <img src="src/images/hero-img.svg" class="w-full" />
+      </div>
     </div>
+
   </div>
+    
         `;
     }
 }
