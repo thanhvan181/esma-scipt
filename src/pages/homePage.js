@@ -15,7 +15,7 @@ const homePage = {
       ${Banner.render()}
       ${Features.render()}
       ${await Categories.render()}
-      ${ProductNew.render()}
+      ${ await ProductNew.render()}
 
     
 
