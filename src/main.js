@@ -30,7 +30,7 @@ router.on({
   "/signup": () => {
     renders(SingUpPage);
   },
-  "signin": () => {
+  "/signin": () => {
     renders(SingInPage);
   }
 

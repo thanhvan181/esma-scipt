@@ -1,6 +1,8 @@
+import { signup } from "../api/userApi";
+
 const SignUp = {
-    render() {
-      return /* html */ `
+  render() {
+    return /* html */ `
    <div class="min-h-screen flex items-center justify-center">
      
     
@@ -33,6 +35,21 @@ const SignUp = {
         </div>
         </div>
       `;
-    }
+  },
+  afterRender() {
+    console.log("aftersingup");
+    const formSignup = document.querySelector("#formSignup");
+    console.log("FormSignUp", formSignup);
+        formSignup.addEventListener("submit", function (e) {
+          e.preventDefault();
+          signup({
+            username: document.querySelector("#username").value,
+            email: document.querySelector("#email").value,
+            password: document.querySelector("#password").value,
+          });
+          
+        });
 }
-export default SignUp
+}
+
+export default SignUp;

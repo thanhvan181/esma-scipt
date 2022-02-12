@@ -1,14 +1,13 @@
+import { getAll } from "../api/productapi";
 
-
-import {getAll} from "../api/productapi";
-
-const ProductNew = {
-   async render() {
-     const {data} = await getAll();
-       return /* html */ `
-      <div class="container pb-16">
+const RecomendProduct = {
+  async render() {
+    const { data } = await getAll();
+    return /* html */ `
+        
+         <div class="container pb-16">
       <h2 class="text-2xl font-medium text-gray-800 uppercase mb-6">
-        Top new arrival
+        Recomment For Yours
       </h2>
       <div class="grid grid-cols-4 gap-6">
       ${data
@@ -111,6 +110,6 @@ const ProductNew = {
     </div>
 
        `;
-    }
-}
-export default ProductNew
+  },
+};
+export default RecomendProduct;

@@ -1,13 +1,17 @@
+import toastr from "toastr";
+import { signin } from "../api/userApi";
+import "toastr/build/toastr.min.css";
+
 const SingIn = {
-    render() {
-        return /* html */ `
+  render() {
+    return /* html */ `
      
 
     <div class="min-h-screen flex items-center justify-center">
         
         <div class="bg-white p-16 rounded shadow-2xl w-2/3">
             <h2 class="text-3xl font-bold mb-10 text-gray-800">Login</h2>
-            <form class="space-y-5" id="formSignup">
+            <form class="space-y-5" id="formSignin">
             
             <div>
                 <label class="block mb-1 font-bold text-gray-500">Email</label>
@@ -40,6 +44,34 @@ const SingIn = {
        
 
         `;
-    }
-}
-export default SingIn
+  },
+  afterRender() {
+    const formSignin = document.querySelector("#formSignin");
+        formSignin.addEventListener("submit", async (e) => {
+            e.preventDefault();
+            try {
+                // call API login
+                const { data } = await signin({
+                    email: document.querySelector("#email").value,
+                    password: document.querySelector("#password").value,
+                });
+                // lưu dữ liệu vào localStorage
+                localStorage.setItem("user", JSON.stringify(data.user));
+                toastr.success("Bạn đã đăng nhập thành công, chờ 3s để chuyển trang");
+                setTimeout(() => {
+                // kiểm tra quyền dựa trên ID
+                    if (data.user.id === 1) {
+                        document.location.href = "/#/admin/dashboard";
+                    } else {
+                        document.location.href = "/#/";
+                    }
+                }, 3000);
+            } catch (error) {
+                toastr.error(error.response.data);
+              
+            }
+        });
+    },
+
+};
+export default SingIn;

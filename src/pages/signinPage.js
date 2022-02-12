@@ -11,5 +11,8 @@ const SingInPage = {
 
         `;
   },
+  afterRender() {
+    return SingIn.afterRender();
+  },
 };
 export default SingInPage;

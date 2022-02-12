@@ -12,27 +12,25 @@ const Navbar = {
         <div
           class="absolute w-full left-0 top-full bg-white shadow-md py-3 divide-y divide-gray-300 divide-dashed opacity-0 group-hover:opacity-100 transition duration-300 invisible group-hover:visible">
           <a href="" class="flex items-center px-6 py-3 transition hover:bg-gray-100">
-            <span class="ml-6 text-sm text-gray-600">SoFa</span>
+            <span class="ml-6 text-sm text-gray-600">Male</span>
           </a>
           <a href="" class="flex items-center px-6 py-3 transition hover:bg-gray-100">
-            <span class="ml-6 text-sm text-gray-600">Bedroom</span>
+            <span class="ml-6 text-sm text-gray-600">Female</span>
           </a>
           <a href="" class="flex items-center px-6 py-3 transition hover:bg-gray-100">
-            <span class="ml-6 text-sm text-gray-600">SoFa</span>
+            <span class="ml-6 text-sm text-gray-600">Boy</span>
           </a>
           <a href="" class="flex items-center px-6 py-3 transition hover:bg-gray-100">
-            <span class="ml-6 text-sm text-gray-600">Office</span>
+            <span class="ml-6 text-sm text-gray-600">Girls</span>
           </a>
           <a href="" class="flex items-center px-6 py-3 transition hover:bg-gray-100">
             <span class="ml-6 text-sm text-gray-600">Outdoor</span>
           </a>
           <a href="" class="flex items-center px-6 py-3 transition hover:bg-gray-100">
-            <span class="ml-6 text-sm text-gray-600">Mattress</span>
+            <span class="ml-6 text-sm text-gray-600">Outlets</span>
           </a>
 
-          <a href="" class="flex items-center px-6 py-3 transition hover:bg-gray-100">
-            <span class="ml-6 text-sm text-gray-600">Dining</span>
-          </a>
+         
         </div>
       </div>
 
