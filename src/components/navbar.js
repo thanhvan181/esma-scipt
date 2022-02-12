@@ -1,6 +1,10 @@
+import toastr from "toastr";
+import { reRender } from "../utils";
+import "toastr/build/toastr.min.css";
+
 const Navbar = {
-    render() {
-        return /* html */ `
+  render() {
+    return /* html */ `
            <nav class="bg-gray-800">
     <div class="container flex">
       <div class="bg-primary relative flex cursor-pointer items-center px-8 py-4 group">
@@ -44,14 +48,39 @@ const Navbar = {
           <a href="" class="text-gray-200 transition hover:text-white">Contact Us</a>
           <a href="/admin/dashboard" class="text-gray-200 transition hover:text-white">Admin</a>
         </div>
-        <a href="/signup" class="text-gray-200 transition hover:text-white">Login/Register
+        <div class=flex items-center space-x-6  capitalize>
+        ${
+          localStorage.getItem("user")
+            ? `   <a href="" class="text-gray-300 ml-10" id="account-user">username</a>
+            <a href="" class="text-gray-300 ml-10" id="logout">Logout</a>`
+            : ` <a href="/signup" class="text-gray-200 transition hover:text-white" id="account-user">Login/Register
+        </a>`
+        }
+
+       
+        
         </a>
+        </div>
+       
       </div>
     </div>
   </nav>
 
 
         `;
-    }
-}
-export default Navbar
+  },
+  afterRender() {
+    const user = JSON.parse(localStorage.getItem("user"));
+    const logout = document.querySelector("#logout");
+    console.log("User", user);
+    document.querySelector("#account-user").innerHTML = user.username;
+
+    logout.addEventListener("click", () => {
+      
+       toastr.success("Logout thành công");
+       localStorage.removeItem("user");
+       reRender(Header, "#navbar");
+    });
+  },
+};
+export default Navbar;

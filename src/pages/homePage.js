@@ -14,7 +14,9 @@ const homePage = {
     console.log("dang o trong homepage");
     return /* html */ `
       ${Header.render()}
-      ${Navbar.render()}
+      <div id="navbar">
+        ${Navbar.render()}
+      </div>
       ${Banner.render()}
       ${Features.render()}
       ${await ProductNew.render()}
@@ -30,5 +32,8 @@ const homePage = {
 
         `;
   },
+  afterRender() {
+    return Navbar.afterRender();
+  }
 };
 export default homePage;

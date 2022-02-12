@@ -352,6 +352,18 @@
       "password": "$2a$10$nsGKX0AF9GvJv.yB3k5WZurFTFL2rYZhA903Ohexz3Zp29NPizyWy",
       "username": "minhhieu",
       "id": 4
+    },
+    {
+      "email": "nguyendb@gmail.com",
+      "password": "$2a$10$u7qQx2T2HehdOdVM3PwWo.S1BPDh8HPqi4JAIaHudabUxuVacCvkK",
+      "username": "nguyendb",
+      "id": 5
+    },
+    {
+      "email": "ngavuhang@gmail.com",
+      "password": "$2a$10$nagM2F0BaH8uu4UmbrnfvelUE3yrg0ZobxAZrfYLyu81NWHyi76ta",
+      "username": "ngavuhang",
+      "id": 6
     }
   ]
 }

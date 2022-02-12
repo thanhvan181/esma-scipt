@@ -1,4 +1,6 @@
 import { signup } from "../api/userApi";
+import "toastr/build/toastr.min.css";
+import toastr from "toastr";
 
 const SignUp = {
   render() {
@@ -47,6 +49,7 @@ const SignUp = {
             email: document.querySelector("#email").value,
             password: document.querySelector("#password").value,
           });
+          toastr.success("Ban dan dang ky thanh cong, vui long dang nhap de vao trang chinh")
           
         });
 }
