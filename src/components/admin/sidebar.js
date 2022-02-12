@@ -50,7 +50,7 @@ const sideBar = {
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
       </svg>
           <a
-            href="#"
+            href="/admin/products"
             class="flex gap-x-4 items-center py-2 text-gray-500 hover:text-indigo-600 group"
           >
           PRODUCT

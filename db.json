@@ -18,27 +18,27 @@
   },
   "categories": [
     {
-      "title": "Bedroom",
+      "title": "Woment",
       "id": 301505
     },
     {
-      "title": "Sofa",
+      "title": "Men",
       "id": 381553
     },
     {
-      "title": "Offcice",
+      "title": "Boy",
       "id": 346275
     },
     {
-      "title": "Ourdor",
+      "title": "Girl",
       "id": 441038
     },
     {
-      "title": "Dinning",
+      "title": "Outfit",
       "id": 647498
     },
     {
-      "title": "Mattees",
+      "title": "Sleepwear",
       "id": 410873
     }
   ],
@@ -326,44 +326,182 @@
         "XL"
       ],
       "classify": "male"
+    },
+    {
+      "categoryId": "301505",
+      "name": "dfdsfs",
+      "price": "dfdsfs",
+      "introduce": "sdfsfds",
+      "content": "sdfsdfs",
+      "imageIntro": "http://res.cloudinary.com/ecommerce-vanthanh/image/upload/v1644659503/eco-van/dlyuxoknu0yo4k9wfjgo.jpg",
+      "album": [
+        "http://res.cloudinary.com/ecommerce-vanthanh/image/upload/v1644659504/eco-van/zeick0wm4t7gwqelh4ob.jpg",
+        "http://res.cloudinary.com/ecommerce-vanthanh/image/upload/v1644659506/eco-van/vvm6r5ztkm5a8mnsbjhj.jpg"
+      ],
+      "id": 625209
+    },
+    {
+      "name": "fdsfds",
+      "price": "20.000",
+      "introduce": "fadsfa",
+      "content": "adfasdf",
+      "imageIntro": "http://res.cloudinary.com/ecommerce-vanthanh/image/upload/v1644661272/eco-van/fhimyqnu6dpenjbpi4jw.jpg",
+      "album": [
+        "http://res.cloudinary.com/ecommerce-vanthanh/image/upload/v1644661273/eco-van/bfudycpyh3hzbjadggrv.jpg",
+        "http://res.cloudinary.com/ecommerce-vanthanh/image/upload/v1644661278/eco-van/e9yarmlrbstotve6jljb.jpg"
+      ],
+      "classify": "male",
+      "size": [],
+      "categoryId": "301505",
+      "id": 625210
+    },
+    {
+      "name": "vab",
+      "price": "50.000",
+      "introduce": "sadad",
+      "content": "sadasd",
+      "imageIntro": "http://res.cloudinary.com/ecommerce-vanthanh/image/upload/v1644661573/eco-van/t5rwbioc9td3b3k0s8hg.jpg",
+      "album": [
+        "http://res.cloudinary.com/ecommerce-vanthanh/image/upload/v1644661574/eco-van/wz3xvf2e42qixnggn5gk.jpg"
+      ],
+      "classify": "male",
+      "size": [],
+      "categoryId": "301505",
+      "id": 625211
+    },
+    {
+      "name": "asdasd",
+      "price": "30.000",
+      "introduce": "asd",
+      "content": "asdsa",
+      "imageIntro": "http://res.cloudinary.com/ecommerce-vanthanh/image/upload/v1644661696/eco-van/wefyork8wwewiymmn0ky.jpg",
+      "album": [
+        "http://res.cloudinary.com/ecommerce-vanthanh/image/upload/v1644661697/eco-van/t5orduqk6hv9tv29wev7.jpg",
+        "http://res.cloudinary.com/ecommerce-vanthanh/image/upload/v1644661698/eco-van/g0kmjcv21rggzzkft1dm.jpg"
+      ],
+      "classify": "male",
+      "size": [],
+      "categoryId": "301505",
+      "id": 625212
+    },
+    {
+      "name": "sdfaf",
+      "price": "afasdf",
+      "introduce": "dadsfasd",
+      "content": "adfasdf",
+      "imageIntro": "http://res.cloudinary.com/ecommerce-vanthanh/image/upload/v1644661970/eco-van/rehxxgsz5zsnqmk2heta.jpg",
+      "album": [
+        "http://res.cloudinary.com/ecommerce-vanthanh/image/upload/v1644661971/eco-van/ln7iwjmb5lvotbgexru4.jpg",
+        "http://res.cloudinary.com/ecommerce-vanthanh/image/upload/v1644661973/eco-van/v73fcnlicimnqhymgyw1.jpg"
+      ],
+      "classify": "male",
+      "size": [
+        "XXS"
+      ],
+      "categoryId": "301505",
+      "id": 625213
+    },
+    {
+      "name": "vanthanh",
+      "price": "324",
+      "introduce": "asdas",
+      "content": "asdad",
+      "imageIntro": "http://res.cloudinary.com/ecommerce-vanthanh/image/upload/v1644662321/eco-van/f5uftma70ttofi5reuuh.jpg",
+      "album": [
+        "http://res.cloudinary.com/ecommerce-vanthanh/image/upload/v1644662322/eco-van/i0adv5lkk5cit5eaylne.jpg",
+        "http://res.cloudinary.com/ecommerce-vanthanh/image/upload/v1644662322/eco-van/q0fgsboickrh3fbgtmvc.jpg"
+      ],
+      "classify": "male",
+      "size": [
+        "XXS",
+        "S",
+        "M",
+        "M-L",
+        "L"
+      ],
+      "categoryId": "346275",
+      "id": 625214
+    },
+    {
+      "name": "fddd",
+      "price": "dddd",
+      "introduce": "dddd",
+      "content": "dddd",
+      "imageIntro": "http://res.cloudinary.com/ecommerce-vanthanh/image/upload/v1644662776/eco-van/ijdzsinsxcavgrkgro2e.jpg",
+      "album": [
+        "http://res.cloudinary.com/ecommerce-vanthanh/image/upload/v1644662779/eco-van/deqn9kmkwy7knwwyrl53.jpg",
+        "http://res.cloudinary.com/ecommerce-vanthanh/image/upload/v1644662781/eco-van/veoknjp5aswjqqsmwiwl.jpg"
+      ],
+      "classify": "male",
+      "size": [
+        "XXS",
+        "XS-S"
+      ],
+      "categoryId": "346275",
+      "id": 625215
+    },
+    {
+      "name": "nguyen",
+      "price": "20.000",
+      "introduce": "nguyendb",
+      "content": "nguyendb",
+      "imageIntro": "http://res.cloudinary.com/ecommerce-vanthanh/image/upload/v1644662969/eco-van/eiyhemeuzhvmnewl2mcz.jpg",
+      "album": [
+        "http://res.cloudinary.com/ecommerce-vanthanh/image/upload/v1644662972/eco-van/kruqzqcniokeqq3blvot.jpg",
+        "http://res.cloudinary.com/ecommerce-vanthanh/image/upload/v1644662973/eco-van/wxgtdirg0lprcobsv0jr.jpg"
+      ],
+      "classify": "male",
+      "size": [
+        "XXS",
+        "M-L"
+      ],
+      "categoryId": "346275",
+      "id": 625216
+    },
+    {
+      "name": "abc",
+      "price": "324",
+      "introduce": "dddd",
+      "content": "dddd",
+      "imageIntro": "http://res.cloudinary.com/ecommerce-vanthanh/image/upload/v1644665801/eco-van/cq7es9s2mhj8cukmptmv.jpg",
+      "album": [
+        "http://res.cloudinary.com/ecommerce-vanthanh/image/upload/v1644665803/eco-van/dtqrobhfiysg3crqagxs.jpg",
+        "http://res.cloudinary.com/ecommerce-vanthanh/image/upload/v1644665804/eco-van/kk5yq6gxtay46t5i1x06.jpg"
+      ],
+      "classify": "male",
+      "size": [
+        "XXS",
+        "S",
+        "M-L"
+      ],
+      "categoryId": "441038",
+      "id": 625217
+    },
+    {
+      "name": "lienthanh",
+      "price": "ggaksksk",
+      "introduce": "ddddd",
+      "content": "ddddd",
+      "imageIntro": "http://res.cloudinary.com/ecommerce-vanthanh/image/upload/v1644665856/eco-van/xxckwk4yilupj3lw2txn.jpg",
+      "album": [
+        "http://res.cloudinary.com/ecommerce-vanthanh/image/upload/v1644665857/eco-van/fbklmfhf4qsxj8nptt7x.jpg",
+        "http://res.cloudinary.com/ecommerce-vanthanh/image/upload/v1644665858/eco-van/nop1flucjpuy1zdqq7nu.jpg"
+      ],
+      "classify": "male",
+      "size": [
+        "XXS",
+        "M"
+      ],
+      "categoryId": "441038",
+      "id": 625218
     }
   ],
   "users": [
     {
-      "username": "vanthanh",
       "email": "vanntph17034@fpt.edu.vn",
-      "password": "1234567",
+      "password": "$2a$10$rMTJyi/z13t9/7tY0IcQsuzEmbYYsfi43qhRAeIsID7YSOp1JyzsK",
+      "username": "vanthanh",
       "id": 1
-    },
-    {
-      "email": "congnguyen@gmail.com",
-      "password": "$2a$10$G.vFzCa2rqw6ONNPUATvMuVQDdyVit2/DCtMCOWMPtNRnn/p4fVUi",
-      "username": "nguyencongnguyen",
-      "id": 2
-    },
-    {
-      "email": "thanhvan@gmail.com",
-      "password": "$2a$10$.BGI4p5hTl0jmUf1r7PHBup8qCz7geohZCRkOuSnBfDHKxwYH9o0a",
-      "username": "vanthanh1801",
-      "id": 3
-    },
-    {
-      "email": "minhhieu@gmail.com",
-      "password": "$2a$10$nsGKX0AF9GvJv.yB3k5WZurFTFL2rYZhA903Ohexz3Zp29NPizyWy",
-      "username": "minhhieu",
-      "id": 4
-    },
-    {
-      "email": "nguyendb@gmail.com",
-      "password": "$2a$10$u7qQx2T2HehdOdVM3PwWo.S1BPDh8HPqi4JAIaHudabUxuVacCvkK",
-      "username": "nguyendb",
-      "id": 5
-    },
-    {
-      "email": "ngavuhang@gmail.com",
-      "password": "$2a$10$nagM2F0BaH8uu4UmbrnfvelUE3yrg0ZobxAZrfYLyu81NWHyi76ta",
-      "username": "ngavuhang",
-      "id": 6
     }
   ]
 }

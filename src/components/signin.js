@@ -61,9 +61,9 @@ const SingIn = {
                 setTimeout(() => {
                 // kiểm tra quyền dựa trên ID
                     if (data.user.id === 1) {
-                        document.location.href = "/#/admin/dashboard";
+                        document.location.href = "/admin/dashboard";
                     } else {
-                        document.location.href = "/#/";
+                        document.location.href = "/";
                     }
                 }, 3000);
             } catch (error) {

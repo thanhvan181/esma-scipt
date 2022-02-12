@@ -4,6 +4,9 @@ import homePage from "./pages/homePage";
 import ShopPage from "./pages/shopPage";
 import SingUpPage from "./pages/signupPage";
 import SingInPage from "./pages/signinPage";
+import ListProductPage from "./pages/admin/product/listproductPage";
+import AddProductList from "./pages/admin/product/addproductPage";
+
 
 const router = new Navigo("/", { linksSelector: "a" });
 const renders = async (content, id) => {
@@ -32,7 +35,13 @@ router.on({
   },
   "/signin": () => {
     renders(SingInPage);
-  }
-
+  },
+  "/admin/products": () => {
+    renders(ListProductPage);
+  },
+  "/admin/products/add": () => {
+    renders(AddProductList);
+    
+  },
 });
 router.resolve();
