@@ -6,18 +6,16 @@ import SingUpPage from "./pages/signupPage";
 import SingInPage from "./pages/signinPage";
 import ListProductPage from "./pages/admin/product/listproductPage";
 import AddProductList from "./pages/admin/product/addproductPage";
-
+import EditProducPage from "./pages/admin/product/editproductPage";
+import ProductDetails from "./pages/productDetails";
 
 const router = new Navigo("/", { linksSelector: "a" });
 const renders = async (content, id) => {
-    if(content.render){
-        document.querySelector('#app').innerHTML = await content.render(id);
-
-    }
-    if(content.afterRender) await content.afterRender();
-
-}
-
+  if (content.render) {
+    document.querySelector("#app").innerHTML = await content.render(id);
+  }
+  if (content.afterRender) await content.afterRender(id);
+};
 
 router.on({
   "/": () => {
@@ -41,7 +39,12 @@ router.on({
   },
   "/admin/products/add": () => {
     renders(AddProductList);
-    
+  },
+  "/editproduct/:id": ({ data }) => {
+    renders(EditProducPage, data.id);
+  },
+  "/products/:id": ({ data }) => {
+    renders(ProductDetails, data.id);
   },
 });
 router.resolve();

@@ -1,11 +1,9 @@
-
-
-import {getAll} from "../api/productapi";
+import { getAll } from "../api/productapi";
 
 const ProductNew = {
-   async render() {
-     const {data} = await getAll();
-       return /* html */ `
+  async render() {
+    const { data } = await getAll();
+    return /* html */ `
       <div class="container pb-16">
       <h2 class="text-2xl font-medium text-gray-800 uppercase mb-6">
         Top new arrival
@@ -17,8 +15,8 @@ const ProductNew = {
        
                  <div class="group overflow-hidden rounded bg-white shadow">
             <div class="relative table-row-group">
-               <a href="#">
-                <img src="${product.imageIntro}" class="rounded-tl-lg rounded-tr-lg" />
+               <a href="/products/${product.id}">
+                <img src="${product.imageIntro}" class="rounded-tl-lg rounded-tr-lg"  />
               </a>
                
               <div
@@ -45,7 +43,7 @@ const ProductNew = {
                   </svg>
                 </a>
                 <a
-                  href=""
+                  href="/products/${product.id}"
                   class="bg-primary flex h-8 w-9 items-center justify-center rounded-full text-lg text-white transition hover:bg-gray-800"
                 >
                   <svg
@@ -67,7 +65,7 @@ const ProductNew = {
               
             </div>
             <div class="pt-4 pb-3 px-4">
-              <a href="">
+              <a href="/products/${product.id}">
                 <h4 class="uppercase font-medium text-xl mb-2 text-gray-800 hover:text-primary transition">${product.name}</h4>
               </a>
               <div class="flex items-baseline mb-1 space-x-2">
@@ -111,6 +109,6 @@ const ProductNew = {
     </div>
 
        `;
-    }
-}
-export default ProductNew
+  },
+};
+export default ProductNew;
