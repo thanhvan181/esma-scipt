@@ -44,52 +44,6 @@
   ],
   "products": [
     {
-      "id": 504038,
-      "name": "Venus",
-      "price": "12000033434",
-      "introduce": "         Lounge like a goddess in our Venus in Play dolman tee. Intentionally oversized and uber-comfortable, you'll want to lounge for days in this U-neck tee. A double layer of whisper soft raw edge lace trims the sleeve and neck.<br>\nPair it with our Venus in Play Pant or Shortie for a truly divine lounge ensemble<br>\n\nMade in the USA<br>\n\nBetween the Sheets Collection<br>       ",
-      "content": "       *All colors feature some degree of heathering: meaning two or more colors/variations of yarn are knitted together, the effect is more pronounced in the grey because, however there are slight variations in the ambrosia, rose, and olympian blue. <br>\n\n\nWash and Dry on delicate cycle with like colors, Hang or Line Dry recommended - tumble dry low heat. Light Iron ok (avoid lace and drawstring)<br>\n\n \nbody: 87% polyester, 10% rayon, 3% spandex (lace trim nylon/spandex)<br>\n\nMade in the USA<br>\n\nBetween the Sheets Collection<br>",
-      "classify": "male",
-      "size": [
-        "XXS"
-      ],
-      "categoryId": "381553",
-      "category": {
-        "title": "Woment",
-        "id": 301505
-      },
-      "album": [
-        "http://res.cloudinary.com/ecommerce-vanthanh/image/upload/v1644682882/eco-van/zwbitl25scrybiiceama.jpg",
-        "http://res.cloudinary.com/ecommerce-vanthanh/image/upload/v1644682883/eco-van/vssroyxar7p8x5smu4aw.jpg",
-        "http://res.cloudinary.com/ecommerce-vanthanh/image/upload/v1644682884/eco-van/rplafpbt7hzxomn0ilp2.jpg"
-      ],
-      "imageIntro": "http://res.cloudinary.com/ecommerce-vanthanh/image/upload/v1644682881/eco-van/zw2w83ukfwfcgxv2sx6h.jpg"
-    },
-    {
-      "id": 529585,
-      "name": "Matchplaycols",
-      "categoryId": "301505",
-      "content": "Morning chill, surprise knock on the door, or long weekend away - find your perfect go-to robe in our new range, Matchplay. In the most heavenly soft jersey knit, this will be the first thing you put on in the morning and when you get home in the evening.<br>\n\nFall in love with little details like the wide attached tie, the figure flattering a-line shape, or the long cozy sleeves that push and stay up when they need to. There's nothing more luxurious than wrapping yourself up in slinky jersey full-length robe, instantly transporting you to a luxurious spa or hotel. This could be love, or just a match made in lounge heaven.<br>\nMade in the USA<br>\n\nBetween the Sheets Collection<br>",
-      "price": "955",
-      "sale": "0",
-      "introduce": "   Wash (cold) and Dry on delicate cycle with like colors, Hang or Flat Dry. Steam press, use press cloth to avoid damaging spandex.<br>\n\nbody: 95% rayon, 5% spandex<br>\n\nMade in the USA<br>\n\nBetween the Sheets Collection<br>\n\nRobe measures approximately 54\" long from shoulder to hem, to hem taken from size S hanging (weight of robe adds a bit of length since it is jersey knit)<br>\n\n*Models are 5'7- 5' 11\", wearing size small<br>\n\n",
-      "imageIntro": "http://res.cloudinary.com/ecommerce-vanthanh/image/upload/v1644682698/eco-van/rtjaebxccaox6pdxnycp.jpg",
-      "album": [
-        "https://firebasestorage.googleapis.com/v0/b/ahsion.appspot.com/o/images%2F51J025BC-grey-melange-jersey-knit-robe-matchplay-f2-web.jpeg?alt=media&token=ff82d306-0935-4a88-bfa9-85658e9a0abe",
-        "https://firebasestorage.googleapis.com/v0/b/ahsion.appspot.com/o/images%2F51J025BC-grey-robe-matchplay-flat-web.jpeg?alt=media&token=c76d2193-7b99-4141-93a3-048de65cc32c",
-        "https://firebasestorage.googleapis.com/v0/b/ahsion.appspot.com/o/images%2F51J025BC-ivory-jersey-knit-robe-matchplay-d-web.jpeg?alt=media&token=bffbe10e-278d-4b5b-a731-ede0a3485fe9",
-        "https://firebasestorage.googleapis.com/v0/b/ahsion.appspot.com/o/images%2F51J025BC-ivory-robe-matchplay-still-life-web.jpeg?alt=media&token=69eed0f2-ed5f-4a25-aede-bc5ca19b151d"
-      ],
-      "size": [
-        "XXS"
-      ],
-      "classify": "male",
-      "category": {
-        "title": "Men",
-        "id": 381553
-      }
-    },
-    {
       "id": 173166,
       "name": "Deco Lace Robe Peach  Lagoon silk",
       "categoryId": "346275",
@@ -330,11 +284,8 @@
     }
   ],
   "users": [
-    {
-      "email": "vanntph17034@fpt.edu.vn",
-      "password": "$2a$10$rMTJyi/z13t9/7tY0IcQsuzEmbYYsfi43qhRAeIsID7YSOp1JyzsK",
-      "username": "vanthanh",
-      "id": 1
-    }
+    
+
+
   ]
 }

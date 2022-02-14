@@ -42,8 +42,8 @@ const Navbar = {
         <div class="flex items-center space-x-6 capitalize">
           <a href="/" class="text-gray-200 transition hover:text-white">Home</a>
           <a href="/shop" class="text-gray-200 transition hover:text-white">Shop</a>
-          <a href="" class="text-gray-200 transition hover:text-white">Woment's</a>
-          <a href="" class="text-gray-200 transition hover:text-white">Ment</a>
+          <a href="/productcategory/female" class="text-gray-200 transition hover:text-white">Woment's</a>
+          <a href="/productcategory/male" class="text-gray-200 transition hover:text-white">Ment</a>
           <a href="" class="text-gray-200 transition hover:text-white">About Us</a>
           <a href="" class="text-gray-200 transition hover:text-white">Contact Us</a>
           <a href="/admin/dashboard" class="text-gray-200 transition hover:text-white">Admin</a>

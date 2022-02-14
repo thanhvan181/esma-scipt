@@ -1,7 +1,7 @@
 import { axiosClient } from "./axiosClient";
 
 export const signup = (user) => {
-  const url = "/signup";
+  const url = "/users";
   return axiosClient.post(url, user);
 };
 export const signin = (user) => {

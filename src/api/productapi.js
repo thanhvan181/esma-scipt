@@ -14,8 +14,8 @@ export const list = () => {
 };
 export const addproduct = (product) => {
   const url = "/products";
-  return axiosClient.post(url, product)
-}
+  return axiosClient.post(url, product);
+};
 export const remove = (id) => {
   const url = `/products/${id}`;
   return axiosClient.delete(url);
@@ -23,11 +23,27 @@ export const remove = (id) => {
 export const read = (id) => {
   console.log("Idread", id);
 
-   const url = `/products/${id}?_expand=category`;
-   return axiosClient.get(url);
-
-}
+  const url = `/products/${id}?_expand=category`;
+  return axiosClient.get(url);
+};
 export const update = (id, data) => {
   const url = `/products/${id}`;
   return axiosClient.put(url, data);
+};
+export const listProductCate = (sex) => {
+  const url = `/products?classify=${sex}`;
+  return axiosClient.get(url);
+};
+export const sortproductAsc = (sortType) => {
+  console.log("Sort by: ", sortType);
+  const url = `products?_sort=price&_order=${sortType}`;
+  return axiosClient.get(url);
+};
+export const sortproductSex = (sex, sortType) => {
+  const url = `/products?classify=${sex}&_sort=price&_order=${sortType}`;
+  return axiosClient.get(url);
+}
+export const searchproduct = (text) => {
+  const url = `products?q=${text}`;
+  return axiosClient.get(url);
 }

@@ -38,18 +38,21 @@ const SignUp = {
         </div>
       `;
   },
-  afterRender() {
+ async afterRender() {
     console.log("aftersingup");
     const formSignup = document.querySelector("#formSignup");
     console.log("FormSignUp", formSignup);
-        formSignup.addEventListener("submit", function (e) {
+        formSignup.addEventListener("submit", await function (e) {
           e.preventDefault();
           signup({
             username: document.querySelector("#username").value,
             email: document.querySelector("#email").value,
             password: document.querySelector("#password").value,
+
           });
-          toastr.success("Ban dan dang ky thanh cong, vui long dang nhap de vao trang chinh")
+          // console.log("Signup", signup)
+
+          // toastr.success("Ban dan dang ky thanh cong, vui long dang nhap de vao trang chinh")
           
         });
 }

@@ -97,7 +97,7 @@ const ProductNew = {
                 <div class="text-xs text-gray-500 ml-4">(140)</div>
               </div>
             </div>
-            <a href="" class="block w-full py-1 text-center text-white bg-primary border border-primary rounded-b hover:bg-transparent hover:text-primary transition">Add to cart</a>
+            <a href="" id="add-cart" class="block w-full py-1 text-center text-white bg-primary border border-primary rounded-b hover:bg-transparent hover:text-primary transition">Add to cart</a>
             
           </div>
            
@@ -110,5 +110,16 @@ const ProductNew = {
 
        `;
   },
+  afterRender() {
+    const carts = document.querySelectorAll("#add-cart");
+    for(let i = 0; i < carts.length; i++){
+      console.log(carts[i]);
+    }
+
+
+
+
+
+  }
 };
 export default ProductNew;

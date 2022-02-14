@@ -1,6 +1,8 @@
+import { searchproduct } from "../api/productapi";
+import { productTemplate } from "../utils";
 const Header = {
-    render() {
-        return /* html */ `
+  render() {
+    return /* html */ `
         <header class="bg-white py-4 shadow-sm">
       <div class="container flex items-center justify-between">
         <a href="">
@@ -16,9 +18,13 @@ const Header = {
             type="text"
             class="border-primary rounded-1-md w-full border border-r-0 py-3 pl-12 pr-3 focus:outline-none"
             placeholder="search"
+            id="search"
           />
           <button
-            class="bg-primary border-primary hover:text-primary rounded-r-md border px-8 text-white transition hover:bg-transparent"
+          id="button-search"
+            class="bg-primary border-primary hover:text-primary rounded-r-md border px-8 text-white transition hover:bg-transparent" 
+
+
           >
             Search
           </button>
@@ -98,7 +104,18 @@ const Header = {
 
         
         `;
-    }
-
-}
+  },
+  afterRender() {
+    const btnSearch = document.querySelector("#button-search");
+    const inputSearch = document.querySelector("#search");
+    const productContainer = document.querySelector("#products");
+    btnSearch.addEventListener("click", async () => {
+      const text = inputSearch.value;
+      if (text) {
+        const { data } = await searchproduct(text);
+        productContainer.innerHTML = productTemplate(data);
+      }
+    });
+  },
+};
 export default Header;

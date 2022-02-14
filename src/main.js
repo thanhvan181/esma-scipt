@@ -8,6 +8,7 @@ import ListProductPage from "./pages/admin/product/listproductPage";
 import AddProductList from "./pages/admin/product/addproductPage";
 import EditProducPage from "./pages/admin/product/editproductPage";
 import ProductDetails from "./pages/productDetails";
+import ProductCategory from "./pages/productCategory";
 
 const router = new Navigo("/", { linksSelector: "a" });
 const renders = async (content, id) => {
@@ -45,6 +46,10 @@ router.on({
   },
   "/products/:id": ({ data }) => {
     renders(ProductDetails, data.id);
+  },
+  "/productcategory/:classify": ({ data }) => {
+    // console.log("DATA:", { data });
+    renders(ProductCategory, data.classify);
   },
 });
 router.resolve();

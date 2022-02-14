@@ -12,8 +12,8 @@ const SingUpPage = {
 
         `;
   },
-   afterRender() {
-      return SignUp.afterRender();
+  async afterRender() {
+      return await SignUp.afterRender();
   }
 };
 export default SingUpPage

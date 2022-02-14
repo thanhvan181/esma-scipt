@@ -2,6 +2,7 @@ import Header from "../components/header";
 import Navbar from "../components/navbar";
 import { read } from "../api/productapi";
 // import { Footer } from "../components/footer";
+import Footer from "../components/footer";
 
 
 const ProductDetails = {
@@ -199,7 +200,7 @@ const ProductDetails = {
     </div>
   </div>
 </div>
-
+${Footer.render()}
 
         `;
   },
