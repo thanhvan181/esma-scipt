@@ -1,9 +1,100 @@
 {
   "posts": [
     {
-      "id": 1,
-      "title": "json-server",
-      "author": "typicode"
+      "createdAt": "2022-01-10T07:26:52.549Z",
+      "title": "Annie Stroman",
+      "img": "http://placeimg.com/640/480/fashion",
+      "desc": "Andy shoes are designed to keeping in mind durability as well as trends, the most stylish range of shoes & sandals",
+      "id": "1"
+    },
+    {
+      "id": "3",
+      "title": "Rufus Konopelski vanthanh",
+      "img": "http://placeimg.com/640/480/transport",
+      "desc": "New ABC 13 9370, 13.3, 5th Gen CoreA5-8250U, 8GB RAM, 256GB SSD, power UHD Graphics, OS 10 Home, OS Office A & J 2016"
+    },
+    {
+      "createdAt": "2022-01-11T00:27:12.664Z",
+      "title": "Lee Abbott",
+      "img": "http://placeimg.com/640/480/people",
+      "desc": "New ABC 13 9370, 13.3, 5th Gen CoreA5-8250U, 8GB RAM, 256GB SSD, power UHD Graphics, OS 10 Home, OS Office A & J 2016",
+      "id": "6"
+    },
+    {
+      "createdAt": "2022-01-15T02:34:50.705Z",
+      "title": "Nathaniel Buckridge",
+      "img": "http://placeimg.com/640/480/business",
+      "desc": "New range of formal shirts are designed keeping you in mind. With fits and styling that will make you stand apart",
+      "id": "7"
+    },
+    {
+      "id": "8",
+      "title": "Tiffany Wisoky",
+      "img": "http://placeimg.com/640/480/cats",
+      "desc": "Ergonomic executive chair upholstered in bonded black leather and PVC padded seat and back for all-day comfort and support"
+    },
+    {
+      "createdAt": "2022-01-15T02:36:13.715Z",
+      "title": "Mr. Doug Purdy",
+      "img": "http://placeimg.com/640/480/nature",
+      "desc": "The Football Is Good For Training And Recreational Purposes",
+      "id": "9"
+    },
+    {
+      "createdAt": "2022-01-14T12:38:27.738Z",
+      "title": "Marty Kuhn",
+      "img": "http://placeimg.com/640/480/nature",
+      "desc": "Boston's most advanced compression wear technology increases muscle oxygenation, stabilizes active muscles",
+      "id": "10"
+    },
+    {
+      "createdAt": "2022-01-14T17:58:26.446Z",
+      "title": "Vickie Jast",
+      "img": "http://placeimg.com/640/480/technics",
+      "desc": "Andy shoes are designed to keeping in mind durability as well as trends, the most stylish range of shoes & sandals",
+      "id": "11"
+    },
+    {
+      "createdAt": "2022-01-14T21:28:17.597Z",
+      "title": "Eunice Hilpert",
+      "img": "http://placeimg.com/640/480/nightlife",
+      "desc": "The automobile layout consists of a front-engine design, with transaxle-type transmissions mounted at the rear of the engine and four wheel drive",
+      "id": "12"
+    },
+    {
+      "createdAt": "2022-01-15T02:21:11.908Z",
+      "title": "Mrs. Drew Farrell",
+      "img": "http://placeimg.com/640/480/fashion",
+      "desc": "Boston's most advanced compression wear technology increases muscle oxygenation, stabilizes active muscles",
+      "id": "13"
+    },
+    {
+      "createdAt": "2022-01-14T11:14:02.843Z",
+      "title": "Lorena Cole",
+      "img": "http://placeimg.com/640/480/technics",
+      "desc": "The beautiful range of Apple Naturalé that has an exciting mix of natural ingredients. With the Goodness of 100% Natural Ingredients",
+      "id": "14"
+    },
+    {
+      "createdAt": "2022-01-15T00:11:58.958Z",
+      "title": "Genevieve Vandervort",
+      "img": "http://placeimg.com/640/480/technics",
+      "desc": "Carbonite web goalkeeper gloves are ergonomically designed to give easy fit",
+      "id": "15"
+    },
+    {
+      "createdAt": "2022-01-18T12:26:39.892Z",
+      "title": "Lucille Crona I",
+      "img": "http://placeimg.com/640/480/people",
+      "desc": "The Nagasaki Lander is the trademarked name of several series of Nagasaki sport bikes, that started with the 1984 ABC800J",
+      "id": "17"
+    },
+    {
+      "title": "vanthanh",
+      "img": "http://res.cloudinary.com/ecommerce-vanthanh/image/upload/v1644907193/eco-van/gvfwt4dc6gczp7hml32v.jpg",
+      "desc": "day la dai tien noi viet nam",
+      "createdAt": "2022-02-12",
+      "id": "L7F3qLk"
     }
   ],
   "comments": [
@@ -34,10 +125,6 @@
       "id": 441038
     },
     {
-      "title": "Outfit",
-      "id": 647498
-    },
-    {
       "title": "Sleepwear",
       "id": 410873
     }
@@ -45,12 +132,12 @@
   "products": [
     {
       "id": 173166,
-      "name": "Deco Lace Robe Peach  Lagoon silk",
-      "categoryId": "346275",
+      "name": "Deco",
+      "categoryId": "301505",
       "content": "inner tie fastens at wearer's right, outer tie at wearer's left<br>\nbias cut 100% silk charmeuse, 100% nylon leavers lace, dry clean only<br>\ndelicate baby hem and french seams<br>\n\nMade in the USA<br>\n\nLayla L'obatti - Specimens of Seduction TM<br>",
-      "price": "90",
+      "price": "16",
       "sale": "0",
-      "introduce": "On Sale 20% off - Only a few left!<br>\nIf diamonds are a girl's best friend, you'll win hearts, diamonds, and more in this stunning satin and lace robe. Here's betting you'll find this the perfect piece to pack for a romantic getaway or even for lounging around on a night in.<br>\n\n100% silk<br>\n\nMade in the USA<br>",
+      "introduce": " On Sale 20% off - Only a few left!<br>\nIf diamonds are a girl's best friend, you'll win hearts, diamonds, and more in this stunning satin and lace robe. Here's betting you'll find this the perfect piece to pack for a romantic getaway or even for lounging around on a night in.<br>\n\n100% silk<br>\n\nMade in the USA<br>",
       "imageIntro": "https://firebasestorage.googleapis.com/v0/b/ahsion.appspot.com/o/images%2F54S002LL-deco-lace-robe-peach-s-web.jpeg?alt=media&token=7b1cfe9c-cabe-440a-80dc-ca2d33c5d908",
       "album": [
         "https://firebasestorage.googleapis.com/v0/b/ahsion.appspot.com/o/images%2F54S002LLweb_ivo_f.jpeg?alt=media&token=46d9a143-97f5-4972-9a24-077c35510f4f",
@@ -58,14 +145,11 @@
         "https://firebasestorage.googleapis.com/v0/b/ahsion.appspot.com/o/images%2F54S002LL-deco-lace-robe-peach-f-web.jpeg?alt=media&token=16ff701b-c3f4-4b4f-bc18-d3af9f3c05a0",
         "https://firebasestorage.googleapis.com/v0/b/ahsion.appspot.com/o/images%2F54S002LLweb_red_f.jpeg?alt=media&token=a11c4291-98b6-4316-ae83-973c53a09208"
       ],
-      "size": [
-        "XXS",
-        "S",
-        "M",
-        "M-L",
-        "L"
-      ],
-      "classify": "female"
+      "classify": "male",
+      "category": {
+        "title": "Boy",
+        "id": 346275
+      }
     },
     {
       "id": 625208,
@@ -81,13 +165,6 @@
         "https://firebasestorage.googleapis.com/v0/b/ahsion.appspot.com/o/images%2F52S006LL_navy_web_f2.jpeg?alt=media&token=9717f5aa-bf35-45d9-9088-4873c87ea6c3",
         "https://firebasestorage.googleapis.com/v0/b/ahsion.appspot.com/o/images%2F52S006LL_web_flat_d.jpeg?alt=media&token=2d108ffc-e025-49a1-82af-069ccebe3b27",
         "https://firebasestorage.googleapis.com/v0/b/ahsion.appspot.com/o/images%2F52S006LL_web_flat_f.jpeg?alt=media&token=6a7507e1-4505-4a57-82eb-666e4a5f71a9"
-      ],
-      "size": [
-        "XS",
-        "S",
-        "M",
-        "M-L",
-        "L"
       ],
       "classify": "female"
     },
@@ -106,14 +183,6 @@
         "https://firebasestorage.googleapis.com/v0/b/ahsion.appspot.com/o/images%2F42T029BC-curtain-call-terry-crop-sweatshirt-pink-f2.jpeg?alt=media&token=6854e106-030e-4305-b7b0-e27787857b45",
         "https://firebasestorage.googleapis.com/v0/b/ahsion.appspot.com/o/images%2F42T029BC-curtain-call-terry-crop-sweatshirt-turquoise-f2-web.jpeg?alt=media&token=e203afa1-d665-4795-abf7-95669e708b21"
       ],
-      "size": [
-        "XS",
-        "XS-S",
-        "S",
-        "M",
-        "M-L",
-        "L"
-      ],
       "classify": "female"
     },
     {
@@ -130,56 +199,6 @@
         "https://firebasestorage.googleapis.com/v0/b/ahsion.appspot.com/o/images%2F37J025BC-coral-lounge-pant-matchplay-f2-web.jpeg?alt=media&token=971bd810-f0c1-421f-b788-ee2533e55815",
         "https://firebasestorage.googleapis.com/v0/b/ahsion.appspot.com/o/images%2F45J025BC-black-jersey-lounge-set-matchplay-f2.jpeg?alt=media&token=22096142-0948-4560-82d9-4acec3a61742",
         "https://firebasestorage.googleapis.com/v0/b/ahsion.appspot.com/o/images%2F45J025BC-coral-cowlneck-matchplay-f5-web.jpeg?alt=media&token=2261980e-c8eb-44d7-8202-208b715521d2"
-      ],
-      "size": [
-        "XS",
-        "XS-S",
-        "S",
-        "M"
-      ],
-      "classify": "female"
-    },
-    {
-      "id": 612672,
-      "name": "Cotton Over the Knee Socks Purple",
-      "categoryId": "647498",
-      "content": "Content & Care Instructions:<br>\n\n-85% Regenerate Cotton, 10% Nylon 5%Elastic<br>\n-Machine wash, tumble dry low (recommend hang/flat dry)<br>\n\n* all legwear is FINAL SALE and cannot be returned or exchanged once opened, please contact us if you are concerned about sizing. <br>\n\nMade in USA by Rock N Socks<br>",
-      "price": "66",
-      "sale": "0",
-      "introduce": "We love the comfortable & sexy combo of solid over the knee socks, paired with a pair of underwear or some of our shorties. The ultimate way to lounge on your own or head to toe effortless for your lover between the sheets. In solid ivory, these schoolgirl style socks are also never out of style.<br>\n\nThe icing on an already sweet treat, they're made in America of earth eco-cotton.<br>\n\n",
-      "imageIntro": "https://firebasestorage.googleapis.com/v0/b/ahsion.appspot.com/o/images%2F51J025BC-red-robe-matchplay-f5-web.jpeg?alt=media&token=32a96296-8e04-459c-9f6d-4889c595f113",
-      "album": [
-        "https://firebasestorage.googleapis.com/v0/b/ahsion.appspot.com/o/images%2Fsock-solid-over-the-knee-ivory-f-web.jpeg?alt=media&token=7287a9d7-b7b1-420d-b5a5-803286bbdd8b",
-        "https://firebasestorage.googleapis.com/v0/b/ahsion.appspot.com/o/images%2Fsock-solid-over-the-knee-ivory-spring-flowers-flatlay.jpeg?alt=media&token=174a07b6-149f-4f82-8732-7786d8593729",
-        "https://firebasestorage.googleapis.com/v0/b/ahsion.appspot.com/o/images%2Fsock-solid-over-the-knee-purple-d-web.jpeg?alt=media&token=0e4842b6-4208-44c2-8549-57ef7531cd5d",
-        "https://firebasestorage.googleapis.com/v0/b/ahsion.appspot.com/o/images%2Fsock-solid-over-the-knee-purple-s-web.jpeg?alt=media&token=0daccac2-37b6-4d4b-a652-ed616a61bfd0"
-      ],
-      "size": [
-        "XS",
-        "XS-S",
-        "S",
-        "M",
-        "M-L"
-      ],
-      "classify": "female"
-    },
-    {
-      "id": 246497,
-      "name": "Herringbone Crew Socks Purple",
-      "categoryId": "647498",
-      "content": "Content & Care Instructions:<br>\n\n-85% Regenerate Cotton, 10% Nylon 5%Elastic<br>\n-Machine wash, tumble dry low (recommend hang/flat dry)<br>\n\n* all legwear is FINAL SALE and cannot be returned or exchanged once opened, please contact us if you are concerned about sizing. <br>\n\nMade in USA by Rock N Socks<br>",
-      "price": "33",
-      "sale": "1",
-      "introduce": "Sweet dreams are made of these- cozy crew socks in pale yellow with chevron/herringbone pattern in navy.  Treat yourself from head to toe with a a day of lounging in cozy socks &  pajamas. We also love socks & intimates for the ultimate girl next door lounge look. The icing on top, they're made from earth friendly recycled cotton blend right here in the USA.",
-      "imageIntro": "https://firebasestorage.googleapis.com/v0/b/ahsion.appspot.com/o/images%2Fsock-herringbone-ankle-flax-navy-s-web.jpeg?alt=media&token=7aa7441a-9a18-43f0-a839-5ffc2e76d96c",
-      "album": [
-        "https://firebasestorage.googleapis.com/v0/b/ahsion.appspot.com/o/images%2Fsock-herringbone-ankle-flax-navy-bed-flat-lay.jpeg?alt=media&token=eefcdc14-679b-49fb-8cca-1a4f11fed4f8",
-        "https://firebasestorage.googleapis.com/v0/b/ahsion.appspot.com/o/images%2Fsock-herringbone-ankle-flax-navy-f.jpeg?alt=media&token=e8104c62-559f-4506-be3e-95aa869c029d",
-        "https://firebasestorage.googleapis.com/v0/b/ahsion.appspot.com/o/images%2Fsock-herringbone-ankle-purple-denim-flatlay-web.jpeg?alt=media&token=552cb205-5228-4420-8a17-6b744089f6b2",
-        "https://firebasestorage.googleapis.com/v0/b/ahsion.appspot.com/o/images%2Fsock-herringbone-ankle-purple-denim-s-web.jpeg?alt=media&token=9791c8ce-88db-4e46-b6a4-af88e1a08da6"
-      ],
-      "size": [
-        "S"
       ],
       "classify": "female"
     },
@@ -198,14 +217,6 @@
         "https://firebasestorage.googleapis.com/v0/b/ahsion.appspot.com/o/images%2Fyellow-official-yarn-dyed-oversized-stripe-t-shirt%20(3).jpeg?alt=media&token=39e615e0-5273-4d10-a85c-c9ee8ce5cd52",
         "https://firebasestorage.googleapis.com/v0/b/ahsion.appspot.com/o/images%2Fyellow-official-yarn-dyed-oversized-stripe-t-shirt.jpeg?alt=media&token=d997f710-781c-4204-9517-a6e2546d0544"
       ],
-      "size": [
-        "XS",
-        "XS-S",
-        "S",
-        "M",
-        "M-L",
-        "L"
-      ],
       "classify": "male"
     },
     {
@@ -222,12 +233,6 @@
         "https://firebasestorage.googleapis.com/v0/b/ahsion.appspot.com/o/images%2Fwhite-oversized-stripe-man-signature-t-shirt%20(2).jpeg?alt=media&token=9dc3e072-9494-4451-9929-2ca25103c9d0",
         "https://firebasestorage.googleapis.com/v0/b/ahsion.appspot.com/o/images%2Fwhite-oversized-stripe-man-signature-t-shirt%20(3).jpeg?alt=media&token=42fc1382-5536-430e-b70f-dfa2b74fe5ef",
         "https://firebasestorage.googleapis.com/v0/b/ahsion.appspot.com/o/images%2Fwhite-oversized-stripe-man-signature-t-shirt.jpeg?alt=media&token=6e7a0e45-b09d-4a80-bf8a-f26b3d9e17ad"
-      ],
-      "size": [
-        "XS",
-        "S",
-        "M-L",
-        "L"
       ],
       "classify": "male"
     },
@@ -246,14 +251,6 @@
         "https://firebasestorage.googleapis.com/v0/b/ahsion.appspot.com/o/images%2Fblack-oversized-man-signature-t-shirt%20(3).jpeg?alt=media&token=d9b348b9-128b-41f4-908e-b4d2bfcd434a",
         "https://firebasestorage.googleapis.com/v0/b/ahsion.appspot.com/o/images%2Fblack-oversized-man-signature-t-shirt.jpeg?alt=media&token=dd7d2e6b-6067-4224-8648-436ac1a5bb65"
       ],
-      "size": [
-        "XXS",
-        "XS",
-        "XS-S",
-        "S",
-        "M",
-        "M-L"
-      ],
       "classify": "male"
     },
     {
@@ -271,21 +268,21 @@
         "https://firebasestorage.googleapis.com/v0/b/ahsion.appspot.com/o/images%2Fblack-oversized-man-signature-t-shirt%20(3).jpeg?alt=media&token=99c475f9-8df9-483d-94b2-31cd361540bd",
         "https://firebasestorage.googleapis.com/v0/b/ahsion.appspot.com/o/images%2Fblack-oversized-man-signature-t-shirt.jpeg?alt=media&token=3c37101c-f52d-4151-b15e-44e5addfa3c6"
       ],
-      "size": [
-        "XXS",
-        "XS",
-        "XS-S",
-        "S",
-        "M",
-        "L",
-        "XL"
-      ],
       "classify": "male"
     }
   ],
   "users": [
-    
-
-
+    {
+      "email": "vanntph17034@fpt.edu.vn",
+      "password": "$2a$10$fY2ejtdkgbNp4fDdwz5dbec9dU2n.ANyJoRqi2s8kGPvSa6sTohJW",
+      "username": "nguyenvan",
+      "id": 1
+    },
+    {
+      "email": "nguyenthivan18012000@gmai.com",
+      "password": "$2a$10$tR85hj5lsDis1Z.W4HMJz.c/jUS/mr/D06eKYvVeJjkXdTi8J90Kq",
+      "username": "nguyenvan",
+      "id": 2
+    }
   ]
 }

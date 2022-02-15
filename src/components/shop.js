@@ -1,10 +1,11 @@
-import { getAll } from "../api/productapi";
-import { sortproductAsc, searchproduct } from "../api/productapi";
-// import { reRender } from "../utils";
+import { list } from "../api/productapi";
+import { sortproductAsc} from "../api/productapi";
+
 
 const Shop = {
   async render() {
-    const { data } = await getAll();
+    const { data } = await list();
+    console.log("Data", data)
 
     return /* html */ `
 
@@ -25,27 +26,17 @@ const Shop = {
             categoris
           </h3>
           <div class="space-y-2">
-            <div class="flex items-center">
+          ${data.map((shopcate) => {
+            return /* html */ `
+             <div class="flex items-center">
               <input type="checkbox" id="cat-1" class="text-primary cursor-pointer rounded-sm focus:ring-0" />
-              <label for="cat-1" class="ml-3 cursor-pointer text-gray-600">Bedroom</label>
+              <label for="cat-1" class="ml-3 cursor-pointer text-gray-600">${shopcate.category.title}</label>
               <div class="ml-auto text-sm text-gray-600">(15)</div>
             </div>
-            <div class="flex items-center">
-              <input type="checkbox" id="cat-1" class="text-primary cursor-pointer rounded-sm focus:ring-0" />
-              <label for="cat-1" class="ml-3 cursor-pointer text-gray-600">sofa
-              </label>
-              <div class="ml-auto text-sm text-gray-600">(15)</div>
-            </div>
-            <div class="flex items-center">
-              <input type="checkbox" id="cat-1" class="text-primary cursor-pointer rounded-sm focus:ring-0" />
-              <label for="cat-1" class="ml-3 cursor-pointer text-gray-600">Bedroom</label>
-              <div class="ml-auto text-sm text-gray-600">(135)</div>
-            </div>
-            <div class="flex items-center">
-              <input type="checkbox" id="cat-1" class="text-primary cursor-pointer rounded-sm focus:ring-0" />
-              <label for="cat-1" class="ml-3 cursor-pointer text-gray-600">Bedroom</label>
-              <div class="ml-auto text-sm text-gray-600">(95)</div>
-            </div>
+
+            `;
+          }).join("")}
+           
           </div>
         </div>
         <div class="pt-4">
@@ -239,6 +230,7 @@ const Shop = {
             </div>
           </div>
           <a href=""
+          id="add-cart"
             class="block w-full py-1 text-center text-white bg-primary border border-primary rounded-b hover:bg-transparent hover:text-primary transition">Add
             to cart</a>
 
@@ -258,8 +250,10 @@ const Shop = {
         `;
   },
   async afterRender() {
+   
     const sortProductPrice = document.querySelector("#sortproduct");
     let products = document.querySelector("#products");
+
     sortProductPrice.addEventListener("change", async () => {
       console.log("Change sort", sortProductPrice.value);
       const { data } = await sortproductAsc(sortProductPrice.value);
@@ -347,7 +341,6 @@ const Shop = {
         `;
       }
     });
-    
   },
 };
 export default Shop;

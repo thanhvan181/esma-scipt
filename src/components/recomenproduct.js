@@ -66,20 +66,14 @@ const RecomendProduct = {
               
             </div>
             <div class="pt-4 pb-3 px-4">
-              <a href="">
+              <a href="/products/${product.id}">
                 <h4 class="uppercase font-medium text-xl mb-2 text-gray-800 hover:text-primary transition">${product.name}</h4>
               </a>
               <div class="flex items-baseline mb-1 space-x-2">
                 <p class="text-xl text-primary font-semibold">${product.price}</p>
                 <p class="text-sm text-gray-400 line-through">$55.00</p>
               </div>
-              <div class="flex flex-row my-3">
-            <a class="border-gray-300 border-2 text-gray-400 rounded-md px-2 py-1 mr-2 text-xs" href="#">XL</a>
-            <a class="border-gray-300 border-2 text-gray-400 rounded-md px-2 py-1 mr-2 text-xs" href="#">XXL</a>
-            <a class="border-gray-300 border-2 text-gray-400 rounded-md px-2 py-1 mr-2 text-xs" href="#">L</a>
-            <a class="border-gray-300 border-2 text-gray-400 rounded-md px-2 py-1 mr-2 text-xs" href="#">M</a>
-            <a class="border-gray-300 border-2 text-gray-400 rounded-md px-2 py-1 mr-2 text-xs" href="#">S</a>
-          </div>
+             
               <div class="flex items-center">
                 <div class="flex gap-1 text-sm text-yellow-400">
                   <span><svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">

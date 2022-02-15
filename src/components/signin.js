@@ -21,6 +21,9 @@ const SingIn = {
                 <label class="block mb-1 font-bold text-gray-500">Password</label>
                 <input type="password" class="w-full border-2 border-gray-200 p-3 rounded outline-none focus:border-purple-500" id="password">
             </div>
+            <p class="mt-4 text-gray-600 text-center">
+                Don't have an account? <a href="/signup" class="text-primary">Register Now
+                </a>
             
            
             <div class="flex items-center justify-between ">
@@ -55,6 +58,7 @@ const SingIn = {
                     email: document.querySelector("#email").value,
                     password: document.querySelector("#password").value,
                 });
+                console.log("Data", data)
                 // lưu dữ liệu vào localStorage
                 localStorage.setItem("user", JSON.stringify(data.user));
                 toastr.success("Bạn đã đăng nhập thành công, chờ 3s để chuyển trang");

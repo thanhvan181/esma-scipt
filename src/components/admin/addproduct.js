@@ -59,35 +59,7 @@ const addProduct = {
                 </label>
                 </div>
             </div>
-            <div class="form-group">
-               <label class="block mb-1 font-bold text-gray-500">Size Product</label>
-                <div class="flex justify-between items-center">
-                <input type="checkbox" name="size" value="XXS" id="XXS" checked>
-                <label for="XXS" class=" py-1  text-gray-800"> XXS
-                </label>
-                <input type="checkbox" name="size" value="XS" id="XS" >
-                <label for="XS" class=" py-1  text-gray-800">
-                    XS </label>
-                <input type="checkbox" name="size" value="XS-S" id="XS-S" >
-                <label for="XS-S" class=" py-1  text-gray-800"> XS-S
-                </label>
-                <input type="checkbox" name="size" value="S" id="S" >
-                <label for="S" class=" py-1  text-gray-800"> S
-                </label>
-                <input type="checkbox" name="size" value="M" id="M" >
-                <label for="M" class=" py-1  text-gray-800"> M
-                </label>
-                <input type="checkbox" name="size" value="M-L" id="M-L" >
-                <label for="M-L" class=" py-1  text-gray-800">
-                    M-L </label>
-                <input type="checkbox" name="size" value="L" id="L" >
-                <label for="L" class=" py-1  text-gray-800"> L
-                </label>
-                <input type="checkbox" name="size" value="XL" id="XL" >
-                <label for="XL" class=" py-1  text-gray-800">
-                    XL </label>
-                </div>
-            </div>
+            
              <div class="row">
                 <div class="col-md-6">
                     <div class="form-group">
@@ -149,14 +121,7 @@ const addProduct = {
         albums.push(response.data.url);
       }
 
-      const sizes = [];
-
-      Object.keys(size).forEach((key) => {
-        if (size[key].checked) {
-          sizes.push(size[key].value);
-        }
-      });
-
+     
       addproduct({
         name: document.querySelector("#nameproduct").value,
         price: document.querySelector("#price").value,
@@ -165,7 +130,7 @@ const addProduct = {
         imageIntro: data.url,
         album: albums,
         classify: document.querySelector("input[name=classify]:checked").value,
-        size: sizes,
+       
         categoryId: document.querySelector("#category").value,
       });
       toastr.success("Them thanh cong product");

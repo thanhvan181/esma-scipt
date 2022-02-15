@@ -8,7 +8,7 @@ const ShopPage = {
   async render() {
     return /* html */ `
        ${Header.render()}
-       ${Navbar.render()}
+       ${await Navbar.render()}
        <div id="shop">
         ${await Shop.render()}
        </div>

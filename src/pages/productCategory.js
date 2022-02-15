@@ -4,13 +4,14 @@ import { listProductCate, sortproductSex } from "../api/productapi";
 import Footer from "../components/footer";
 import { productTemplate } from "../utils";
 
+
 const ProductCategory = {
   async render(classify) {
     const { data } = await listProductCate(classify);
 
     return /* html */ `
     ${Header.render()}
-    ${Navbar.render()}
+    ${ await Navbar.render()}
 <div class="container flex items-center gap-3 py-4">
     <a href="" class="text-primary text-base">
      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -242,7 +243,7 @@ const ProductCategory = {
               <div class="text-xs text-gray-500 ml-4">(140)</div>
             </div>
           </div>
-          <a href=""
+          <a href="" id="add-cart"
             class="block w-full py-1 text-center text-white bg-primary border border-primary rounded-b hover:bg-transparent hover:text-primary transition">Add
             to cart</a>
 
@@ -262,6 +263,7 @@ ${Footer.render()}
         `;
   },
   async afterRender(classify) {
+    
     console.log("Clssify", classify);
     const sortProductPriceCate = document.querySelector("#sortproduct");
     let productsCate = document.querySelector("#products");
@@ -271,10 +273,10 @@ ${Footer.render()}
         classify,
         sortProductPriceCate.value
       );
-    //   console.log("DataSortSEx", data);
-      productsCate.innerHTML = productTemplate(data)
+      //   console.log("DataSortSEx", data);
+      productsCate.innerHTML = productTemplate(data);
     });
-    Header.afterRender()
+    Header.afterRender();
   },
 };
 export default ProductCategory;

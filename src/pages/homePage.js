@@ -15,7 +15,7 @@ const homePage = {
     return /* html */ `
       ${Header.render()}
       <div id="navbar">
-        ${Navbar.render()}
+        ${ await Navbar.render()}
       </div>
       ${Banner.render()}
       ${Features.render()}
@@ -33,6 +33,7 @@ const homePage = {
         `;
   },
   afterRender() {
+    ProductNew.afterRender();
     return Navbar.afterRender();
   }
 };

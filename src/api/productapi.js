@@ -21,7 +21,7 @@ export const remove = (id) => {
   return axiosClient.delete(url);
 };
 export const read = (id) => {
-  console.log("Idread", id);
+  
 
   const url = `/products/${id}?_expand=category`;
   return axiosClient.get(url);
@@ -45,5 +45,9 @@ export const sortproductSex = (sex, sortType) => {
 }
 export const searchproduct = (text) => {
   const url = `products?q=${text}`;
+  return axiosClient.get(url);
+}
+export const productCate = (sex) => {
+ const url = `/products?classify=${sex}`;
   return axiosClient.get(url);
 }

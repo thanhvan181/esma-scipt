@@ -1,9 +1,13 @@
 import toastr from "toastr";
 import { reRender } from "../utils";
 import "toastr/build/toastr.min.css";
+import { getAllCate } from "../api/categoryapi";
 
 const Navbar = {
-  render() {
+  async render() {
+    const { data } = await getAllCate();
+    // const getAdmin = JSON.parse(localStorage.getItem("user"));
+
     return /* html */ `
            <nav class="bg-gray-800">
     <div class="container flex">
@@ -15,24 +19,17 @@ const Navbar = {
         <span class="ml-2 capitalize text-white"> All Categories </span>
         <div
           class="absolute w-full left-0 top-full bg-white shadow-md py-3 divide-y divide-gray-300 divide-dashed opacity-0 group-hover:opacity-100 transition duration-300 invisible group-hover:visible">
-          <a href="" class="flex items-center px-6 py-3 transition hover:bg-gray-100">
-            <span class="ml-6 text-sm text-gray-600">Male</span>
+          ${data
+            .map((itemcate) => {
+              return /* html */ `
+             <a href="" class="flex items-center px-6 py-3 transition hover:bg-gray-100">
+            <span class="ml-6 text-sm text-gray-600">${itemcate.title}</span>
           </a>
-          <a href="" class="flex items-center px-6 py-3 transition hover:bg-gray-100">
-            <span class="ml-6 text-sm text-gray-600">Female</span>
-          </a>
-          <a href="" class="flex items-center px-6 py-3 transition hover:bg-gray-100">
-            <span class="ml-6 text-sm text-gray-600">Boy</span>
-          </a>
-          <a href="" class="flex items-center px-6 py-3 transition hover:bg-gray-100">
-            <span class="ml-6 text-sm text-gray-600">Girls</span>
-          </a>
-          <a href="" class="flex items-center px-6 py-3 transition hover:bg-gray-100">
-            <span class="ml-6 text-sm text-gray-600">Outdoor</span>
-          </a>
-          <a href="" class="flex items-center px-6 py-3 transition hover:bg-gray-100">
-            <span class="ml-6 text-sm text-gray-600">Outlets</span>
-          </a>
+
+            `;
+            })
+            .join("")}
+         
 
          
         </div>
@@ -44,16 +41,20 @@ const Navbar = {
           <a href="/shop" class="text-gray-200 transition hover:text-white">Shop</a>
           <a href="/productcategory/female" class="text-gray-200 transition hover:text-white">Woment's</a>
           <a href="/productcategory/male" class="text-gray-200 transition hover:text-white">Ment</a>
-          <a href="" class="text-gray-200 transition hover:text-white">About Us</a>
-          <a href="" class="text-gray-200 transition hover:text-white">Contact Us</a>
+          <a href="/blog" class="text-gray-200 transition hover:text-white">Blog</a>
+          
           <a href="/admin/dashboard" class="text-gray-200 transition hover:text-white">Admin</a>
+      
+        
         </div>
         <div class=flex items-center space-x-6  capitalize>
         ${
           localStorage.getItem("user")
-            ? `   <a href="" class="text-gray-300 ml-10" id="account-user">username</a>
-            <a href="" class="text-gray-300 ml-10" id="logout">Logout</a>`
-            : ` <a href="/signup" class="text-gray-200 transition hover:text-white" id="account-user">Login/Register
+            ? ` 
+                 <a href="" class="text-gray-300 ml-10" id="account-user">username</a>
+                  <a href="" class="text-gray-300 ml-10" id="logout">Logout</a>
+                  </ul>`
+            : `   <a href="/signin" class="text-gray-200 transition hover:text-white" id="account-user">Login/Register
         </a>`
         }
 
@@ -76,10 +77,9 @@ const Navbar = {
     document.querySelector("#account-user").innerHTML = user.username;
 
     logout.addEventListener("click", () => {
-      
-       toastr.success("Logout thành công");
-       localStorage.removeItem("user");
-       reRender(Header, "#navbar");
+      toastr.success("Logout thành công");
+      localStorage.removeItem("user");
+      reRender(Header, "#navbar");
     });
   },
 };

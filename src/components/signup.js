@@ -38,11 +38,11 @@ const SignUp = {
         </div>
       `;
   },
- async afterRender() {
+ afterRender() {
     console.log("aftersingup");
     const formSignup = document.querySelector("#formSignup");
     console.log("FormSignUp", formSignup);
-        formSignup.addEventListener("submit", await function (e) {
+        formSignup.addEventListener("submit", function (e) {
           e.preventDefault();
           signup({
             username: document.querySelector("#username").value,

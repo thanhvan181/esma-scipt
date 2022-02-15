@@ -1,13 +1,15 @@
 import SingIn from "../components/signin";
 import Header from "../components/header";
 import Navbar from "../components/navbar";
+import Footer from "../components/footer";
 
 const SingInPage = {
-  render() {
+ async render() {
     return /* html */ `
     ${Header.render()}
-    ${Navbar.render()}
+    ${ await Navbar.render()}
     ${SingIn.render()}
+    ${Footer.render()}
 
         `;
   },

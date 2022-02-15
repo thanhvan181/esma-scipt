@@ -1,20 +1,20 @@
 import sideBar from "../../../components/admin/sidebar";
-import { list, remove } from "../../../api/productapi";
+import { postAPI } from "../../../api/blogApi";
 import toastr from "toastr";
 import "toastr/build/toastr.min.css";
+import { remove } from "../../../api/blogApi";
 import { reRender } from "../../../utils";
-const ListProductPage = {
-  async render() {
-    const { data } = await list();
+const ListBlogPage = {
+  async render(id) {
+    const { data: blog } = await postAPI.list();
     return /* html */ `
-    
-  <div class="w-full min-h-screen font-sans text-gray-900 bg-gray-50 flex">
+        <div class="w-full min-h-screen font-sans text-gray-900 bg-gray-50 flex">
     ${sideBar.render()}
 
       <main class="flex-1 pb-8">
       <div class="flex items-center justify-between py-7 px-10">
         <div>
-          <h1 class="text-2xl font-semibold leading-relaxed text-gray-800">Products</h1>
+          <h1 class="text-2xl font-semibold leading-relaxed text-gray-800">Blog</h1>
           <p class="text-sm font-medium text-gray-500">
             Let's grow to your business! Create your product and upload here
           </p>
@@ -23,7 +23,7 @@ const ListProductPage = {
           class="inline-flex gap-x-2 items-center py-2.5 px-6 text-white bg-indigo-600 rounded-xl hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-1"
         >
           
-          <a href="/admin/products/add"class="text-sm font-semibold tracking-wide">Add Product</a>
+          <a href="/admin/blog/add"class="text-sm font-semibold tracking-wide">Add blog</a>
         </button>
       </div>
 
@@ -49,12 +49,10 @@ const ListProductPage = {
               </div>
             </td>
             <td class="py-4 px-4 text-center">STT</td>
-            <td class="py-4 px-4 text-center">NAME</td>
-            <td class="py-4 px-4 text-center">CATEGORY</td>
-            <td class="py-4 px-4 text-center">PRICE</td>
-            <td class="py-4 px-4 text-center">SALE</td>
-            
-            <td class="py-4 px-4 text-center">CLASSIFY</td>
+            <td class="py-4 px-4 text-center">TITLE</td>
+            <td class="py-4 px-4 text-center">DESC</td>
+            <td class="py-4 px-4 text-center">CREATE</td>
+          
           
             <td class="py-4 px-4 text-center">CUSTOM</td>
             <td class="py-4 pr-10 pl-4 text-center">
@@ -63,7 +61,7 @@ const ListProductPage = {
           </tr>
         </thead>
         <tbody>
-        ${data
+        ${blog
           .map((element, index) => {
             return /* html */ `
             <tr
@@ -71,37 +69,20 @@ const ListProductPage = {
             class="hover:bg-gray-100 transition-colors group"
           >
             <td class="flex gap-x-4 items-center py-4 pl-10">
-              <input
-                type="checkbox"
-                class="w-6 h-6 text-indigo-600 rounded-md border-gray-300"
-              />
+             
               <img
-                src="${element.imageIntro}"
+                src="${element.img}"
                 alt=""
                 class="w-40 aspect-[3/2] rounded-lg object-cover object-top border border-gray-200"
               />
               <div>
-                <a href="#" class="text-lg font-semibold text-gray-700">
-                 
-                </a>
-                <div class="font-medium text-gray-400"></div>
-              </div>
+               
             </td>
             <td class="font-medium text-center">${index + 1}</td>
-            <td class="font-medium text-center">${element.name}</td>
-            <td class="text-center">
-              ${element.category.title}
-            </td>
-            <td class="font-medium text-center">
-             ${element.price}
-            </td>
-              <td class="font-medium text-center">
-             ${element.sale}
-            </td>
+            <td class="font-medium text-center">${element.title}</td>
+             <td class="font-medium text-center">${element.desc}</td>
+              <td class="font-medium text-center">${element.createdAt}</td>
            
-              <td class="font-medium text-center">
-             ${element.classify}
-            </td>
             <td>
              <button >
              <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 fill-red-600 btn btn-remove" data-id=${
@@ -113,7 +94,7 @@ const ListProductPage = {
             
             </td>
              <td>
-             <a href="/editproduct/${element.id}">
+             <a href="/admin/editblog/${element.id}">
              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 fill-blue-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
                 </svg>
@@ -150,28 +131,21 @@ const ListProductPage = {
         `;
   },
   afterRender() {
-    const btns = document.querySelectorAll(".btn");
-    // tạo vòng lặp để lấy từng button element
-    btns.forEach((btn) => {
-      // Lấy giá trị ID thông qua thuộc tính data-id của button
-      const { id } = btn.dataset;
-      console.log("Id", id);
-      btn.addEventListener("click", () => {
-        const confirm = window.confirm("Bạn có chắc chắn muốn xóa không?");
-        console.log("conf");
-        if (confirm) {
-          remove(id)
-            .then(() => {
-              toastr.success("Bạn đã xóa thành công");
-            })
-            .then(() => {
-              //  window.location.href = './products'
-              reRender(ListProductPage, "#app");
-            });
+    const removeBlog = document.querySelectorAll(".btn");
+    removeBlog.forEach(btn => {
+      const id = btn.dataset.id;
+      btn.addEventListener("click", function(e){
+        e.preventDefault();
+        const confirm = window.confirm("Ban co muon xoa khong");
+        if(confirm){
+          remove(id).then(
+            toastr.success("Ban da xoa thanh cong")
+          )
         }
-        // remove
-      });
-    });
+        reRender(ListBlogPage, "#app")
+      })
+    })
+   
   },
 };
-export default ListProductPage;
+export default ListBlogPage;

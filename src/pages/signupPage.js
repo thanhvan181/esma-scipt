@@ -1,19 +1,20 @@
 import SignUp from "../components/signup";
 import Header from "../components/header";
 import Navbar from "../components/navbar";
-
+import Footer from "../components/footer";
 const SingUpPage = {
-  render() {
+ async render() {
     return /* html */ `
         ${Header.render()}
-        ${Navbar.render()}
+        ${await Navbar.render()}
 
         ${SignUp.render()}
+        ${Footer.render()}
 
         `;
   },
-  async afterRender() {
-      return await SignUp.afterRender();
-  }
+  afterRender() {
+    return SignUp.afterRender();
+  },
 };
-export default SingUpPage
+export default SingUpPage;

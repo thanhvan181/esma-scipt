@@ -1,5 +1,6 @@
 import { getAll } from "../api/productapi";
 
+
 const ProductNew = {
   async render() {
     const { data } = await getAll();
@@ -72,13 +73,7 @@ const ProductNew = {
                 <p class="text-xl text-primary font-semibold">${product.price}</p>
                 <p class="text-sm text-gray-400 line-through">$55.00</p>
               </div>
-              <div class="flex flex-row my-3">
-            <a class="border-gray-300 border-2 text-gray-400 rounded-md px-2 py-1 mr-2 text-xs" href="#">XL</a>
-            <a class="border-gray-300 border-2 text-gray-400 rounded-md px-2 py-1 mr-2 text-xs" href="#">XXL</a>
-            <a class="border-gray-300 border-2 text-gray-400 rounded-md px-2 py-1 mr-2 text-xs" href="#">L</a>
-            <a class="border-gray-300 border-2 text-gray-400 rounded-md px-2 py-1 mr-2 text-xs" href="#">M</a>
-            <a class="border-gray-300 border-2 text-gray-400 rounded-md px-2 py-1 mr-2 text-xs" href="#">S</a>
-          </div>
+             
               <div class="flex items-center">
                 <div class="flex gap-1 text-sm text-yellow-400">
                   <span><svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -111,15 +106,7 @@ const ProductNew = {
        `;
   },
   afterRender() {
-    const carts = document.querySelectorAll("#add-cart");
-    for(let i = 0; i < carts.length; i++){
-      console.log(carts[i]);
-    }
-
-
-
-
-
-  }
+   
+  },
 };
 export default ProductNew;

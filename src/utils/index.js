@@ -5,7 +5,6 @@ export const reRender = async (component, domElement) => {
   if (component.afterRender) await component.afterRender();
 };
 
-
 export const productTemplate = (data) => {
   return /* html */ `
 
@@ -86,16 +85,14 @@ export const productTemplate = (data) => {
     })
     .join("")}
   `;
+};
 
-}
-// export const useParams = () => {
-//   const url = window.location.hash.toLocaleLowerCase();
-//   // console.log(url);
-//   const request = url.split("/");
-//   // console.log(request);
-//   return {
-//     resource: request[1],
-//     id: request[2],
-//     action: request[3],
-//   };
-// };
+export const setLocalStorage = (key, value) => {
+  localStorage.setItem(key, JSON.stringify(value));
+};
+// eslint-disable-next-line consistent-return
+export const getLocalStorage = (key) => {
+  if (localStorage.getItem(key)) {
+    return JSON.parse(localStorage.getItem(key));
+  }
+};
