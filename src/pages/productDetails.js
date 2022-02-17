@@ -1,16 +1,17 @@
 import Header from "../components/header";
 import Navbar from "../components/navbar";
 import { read } from "../api/productapi";
-import { addTocart } from "../utils/cart";
+import { addTocart, getProduct } from "../utils/cart";
 import Footer from "../components/footer";
+import toastr from "toastr";
+import "toastr/build/toastr.min.css";
 // import { readCate } from "../api/categoryapi";
 
 const ProductDetails = {
   async render(id) {
     const { data: result } = await read(id);
-
-    
-
+    const product = getProduct(id);
+    console.log("result.quantity", result.quantity);
     return /* html */ `
     ${await Header.render()}
     ${await Navbar.render()}
@@ -100,9 +101,9 @@ const ProductDetails = {
             <div class="mt-4">
                 <h3 class="text-base text-gray-800 mb-1">Quantity</h3>
                 <div class="flex border border-gray-300 text-gray-600 divide-x divide-gray-300 w-max">
-                    <div class="h-8 w-8 text-xl flex items-center justify-center cursor-pointer select-none">-</div>
-                    <div class="h-8 w-10 flex items-center justify-center">4</div>
-                    <div class="h-8 w-8 text-xl flex items-center justify-center cursor-pointer select-none">+</div>
+                <div>
+                    <input type="number" id="inputValue" class="border border-gray-500" />
+                </div>
                 </div>
             </div>
             
@@ -147,11 +148,18 @@ ${Footer.render()}
         `;
   },
   afterRender(id) {
-      Navbar.afterRender()
+    Navbar.afterRender();
+
     const btnAddToCart = document.querySelector("#btnAddToCart");
+    const inputValue = document.querySelector("#inputValue");
     btnAddToCart.addEventListener("click", async () => {
       const { data } = await read(id);
-      addTocart({...data, quantity : 1})
+      addTocart(
+        { ...data, quantity: inputValue.value ? +inputValue.value : 1 },
+        () => {
+          toastr.success("Đã thêm");
+        }
+      );
     });
   },
 };

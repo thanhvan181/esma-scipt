@@ -1,5 +1,7 @@
-import { getAll } from "../api/productapi";
-
+import { getAll, get } from "../api/productapi";
+import { addTocart } from "../utils/cart";
+import toastr from "toastr";
+import "toastr/build/toastr.min.css";
 
 const ProductNew = {
   async render() {
@@ -92,7 +94,7 @@ const ProductNew = {
                 <div class="text-xs text-gray-500 ml-4">(140)</div>
               </div>
             </div>
-            <a href="" id="add-cart" class="block w-full py-1 text-center text-white bg-primary border border-primary rounded-b hover:bg-transparent hover:text-primary transition">Add to cart</a>
+            <button href="" data-id="${product.id}" class="block w-full py-1 text-center text-white bg-primary border border-primary rounded-b hover:bg-transparent hover:text-primary transition btn_addcart">Add to cart</button>
             
           </div>
            
@@ -106,6 +108,21 @@ const ProductNew = {
        `;
   },
   afterRender() {
+    const btnAddToCart = document.querySelectorAll(".btn_addcart");
+      btnAddToCart.forEach((btn) => {
+       btn.addEventListener("click", async () => {
+         const id = btn.dataset.id;
+         const { data } = await get(id);
+         addTocart({ ...data, quantity: 1 }, () => {
+           toastr.success("Đã thêm");
+            document.querySelector("#quantity-item").innerHTML = getTotalItems();
+            reRender(header, "#header");
+         });
+       });
+    
+
+   })
+  
    
   },
 };

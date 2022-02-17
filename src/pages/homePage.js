@@ -13,9 +13,11 @@ const homePage = {
   async render() {
     console.log("dang o trong homepage");
     return /* html */ `
-      ${Header.render()}
+      <div id="header">
+       ${Header.render()}
+      </div>
       <div id="navbar">
-        ${ await Navbar.render()}
+        ${await Navbar.render()}
       </div>
       ${Banner.render()}
       ${Features.render()}
@@ -34,6 +36,7 @@ const homePage = {
   },
   afterRender() {
     ProductNew.afterRender();
+    
     return Navbar.afterRender();
   }
 };

@@ -1,5 +1,6 @@
 import { searchproduct } from "../api/productapi";
 import { productTemplate } from "../utils";
+import { getTotalItems } from "../utils/cart";
 const Header = {
   render() {
     return /* html */ `
@@ -42,9 +43,9 @@ const Header = {
             </svg>
             </div>
             <div class="text-sm leading-3">Cart</div>
-            <span
+            <span id="quantity-item"
               class="bg-primary absolute right-0 -top-1 flex h-5 w-5 items-center justify-center rounded-full text-xs text-white"
-              >0</span
+              >${getTotalItems()}</span
             >
           </a>
          

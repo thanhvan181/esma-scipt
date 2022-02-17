@@ -17,7 +17,9 @@ const OrderComplete = {
     
     <div class="max-w-3xl mx-auto px-4 pt-16 pb-24 text-center">
         <div class="mb-8">
-            <img src="images/complete.png" class="w-16 inline-block">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-32 w-32 ml-52" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+            </svg>
         </div>
         <h2 class="text-gray-800 font-medium text-3xl mb-3">
             YOUR ORDER IS COMPLETED!
@@ -27,7 +29,7 @@ const OrderComplete = {
             receive an email confirmation when your order is completed.
         </p>
         <div class="mt-10">
-            <a href="index.html" class="bg-primary border border-primary text-white px-6 py-3 font-medium rounded-md uppercase hover:bg-transparent
+            <a href="/" class="bg-primary border border-primary text-white px-6 py-3 font-medium rounded-md uppercase hover:bg-transparent
          hover:text-primary transition text-center">Continue shopping</a>
         </div>
     </div>
@@ -35,5 +37,8 @@ const OrderComplete = {
 
         `;
   },
+  afterRender() {
+      Navbar.afterRender()
+  }
 };
 export default OrderComplete;

@@ -22,7 +22,9 @@ import BlogPage from "./pages/blogPage";
 import BlogDetails from "./pages/blogDetails";
 import ListBlogPage from './pages/admin/blog/listBlogPage';
 import AddBlogPage from './pages/admin/blog/addblogPage';
-import EditBlogPage from './pages/admin/blog/editblogPage'
+import EditBlogPage from './pages/admin/blog/editblogPage';
+import ListOrder from "./pages/admin/order/listorder";
+
 
 
 
@@ -119,5 +121,8 @@ router.on({
   "/admin/editblog/:id": ({ data }) => {
     renders(EditBlogPage, data.id);
   },
+  "admin/order": () => {
+    renders(ListOrder);
+  }
 });
 router.resolve();

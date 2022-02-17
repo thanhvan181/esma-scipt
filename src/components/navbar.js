@@ -79,6 +79,7 @@ const Navbar = {
     logout.addEventListener("click", () => {
       toastr.success("Logout thành công");
       localStorage.removeItem("user");
+       localStorage.removeItem("cart");
       reRender(Header, "#navbar");
     });
   },
