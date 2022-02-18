@@ -36,7 +36,7 @@ const homePage = {
   },
   afterRender() {
     ProductNew.afterRender();
-    
+     RecomendProduct.afterRender();
     return Navbar.afterRender();
   }
 };

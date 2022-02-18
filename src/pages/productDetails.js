@@ -57,6 +57,11 @@ const ProductDetails = {
                       result.album[3]
                     }" class="single-img w-full cursor-pointer border">
                 </div>
+                 <div>
+                    <img src="${
+                      result.album[4]
+                    }" class="single-img w-full cursor-pointer border">
+                </div>
                
             </div>
         </div>
@@ -102,7 +107,7 @@ const ProductDetails = {
                 <h3 class="text-base text-gray-800 mb-1">Quantity</h3>
                 <div class="flex border border-gray-300 text-gray-600 divide-x divide-gray-300 w-max">
                 <div>
-                    <input type="number" id="inputValue" class="border border-gray-500" />
+                    <input type="number" id="inputValue" class="border border-gray-500" min="0"  />
                 </div>
                 </div>
             </div>

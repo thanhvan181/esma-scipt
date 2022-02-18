@@ -1,18 +1,82 @@
-import { getAll, get } from "../api/productapi";
-import { addTocart } from "../utils/cart";
+import { getAll, get, paginateProduct } from "../api/productapi";
+import { addTocart, getTotalItems } from "../utils/cart";
 import toastr from "toastr";
 import "toastr/build/toastr.min.css";
+import { reRender } from "../utils";
+import Header from "../components/header";
 
 const ProductNew = {
   async render() {
-    const { data } = await getAll();
+    // const { data } = await getAll();
+    const { data: paginate_Product, headers } = await paginateProduct();
+    const listPage = [];
+
+    const totalPage = headers["x-total-count"] / 4;
+    for (let i = 1; i < totalPage + 1; i++) {
+      listPage.push(
+        `  <button class="page-button hover:bg-gray-700  px-2 rounded page-item w-12 h-12 font-medium" data-index="${i}">${i}</button>`
+      );
+    }
+    console.log("TotalPage", totalPage);
     return /* html */ `
       <div class="container pb-16">
       <h2 class="text-2xl font-medium text-gray-800 uppercase mb-6">
         Top new arrival
       </h2>
-      <div class="grid grid-cols-4 gap-6">
-      ${data
+      <div id="home-content" class="grid grid-cols-4 gap-6">
+      ${this.reRenderPage(paginate_Product)}
+      </div>
+    </div>
+    <div class="flex items-center justify-center mb-12 text-gray-300 flex items-center space-x-2 select-none">
+        <button class="h-16 w-16 p-1 hover:bg-gray-700 rounded page-control" data-action="minus"><svg fill="currentColor" viewBox="0 0 20 20">
+            <path fill-rule="evenodd"
+                d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z"
+                clip-rule="evenodd"></path>
+        </svg></button>
+        <div class="space-x-1">
+       
+          ${listPage.join("")}
+        </div>
+        <button class="h-16 w-16 p-1 hover:bg-gray-700 rounded page-control" data-action="plus"><svg fill="currentColor" viewBox="0 0 20 20">
+            <path fill-rule="evenodd"
+                d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
+                clip-rule="evenodd"></path>
+        </svg>
+        </button>
+    </div>
+
+       `;
+  },
+  afterRender() {
+    const btnAddToCart = document.querySelectorAll(".btn_addcart");
+    btnAddToCart.forEach((btn) => {
+      btn.addEventListener("click", async () => {
+        const id = btn.dataset.id;
+        const { data } = await get(id);
+        addTocart({ ...data, quantity: 1 }, () => {
+          toastr.success("Đã thêm");
+          document.querySelector("#quantity-item").innerHTML = getTotalItems();
+          reRender(Header, "#header");
+        });
+      });
+    });
+    const pageButtons = document.querySelectorAll(".page-button");
+    pageButtons.forEach((btn_page) => {
+      btn_page.addEventListener("click", async (e) => {
+        console.log("DataIndex", { e });
+        const { data } = await paginateProduct(e.target.dataset.index);
+        document.querySelector("#home-content").innerHTML = this.reRenderPage(data);
+        
+        
+
+        
+      });
+    });
+   
+  },
+  reRenderPage (data) {
+    return /* html */ `
+     ${data
         .map((product) => {
           return /* html */ `
        
@@ -102,28 +166,10 @@ const ProductNew = {
         `;
         })
         .join("")}
-      </div>
-    </div>
 
-       `;
-  },
-  afterRender() {
-    const btnAddToCart = document.querySelectorAll(".btn_addcart");
-      btnAddToCart.forEach((btn) => {
-       btn.addEventListener("click", async () => {
-         const id = btn.dataset.id;
-         const { data } = await get(id);
-         addTocart({ ...data, quantity: 1 }, () => {
-           toastr.success("Đã thêm");
-            document.querySelector("#quantity-item").innerHTML = getTotalItems();
-            reRender(header, "#header");
-         });
-       });
-    
 
-   })
-  
-   
-  },
+
+    `
+  }
 };
 export default ProductNew;

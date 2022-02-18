@@ -2,6 +2,7 @@ import { list } from "../api/productapi";
 import { sortproductAsc, get } from "../api/productapi";
 import { productTemplate } from "../utils/index";
 import { addTocart, getTotalItems } from "../utils/cart";
+import Navbar from "../components/navbar"
 import toastr from "toastr";
 import "toastr/build/toastr.min.css";
 
@@ -202,7 +203,7 @@ const Shop = {
             </a>
             <div class="flex items-baseline mb-1 space-x-2">
               <p class="text-xl text-primary font-semibold">${itemshop.price}</p>
-              <p class="text-sm text-gray-400 line-through">${itemshop.sale}</p>
+              
             </div>
             <div class="flex items-center">
               <div class="flex gap-1 text-sm text-yellow-400">
@@ -255,11 +256,12 @@ const Shop = {
         `;
   },
   async afterRender() {
+    Navbar.afterRender();
     const sortProductPrice = document.querySelector("#sortproduct");
     let products = document.querySelector("#products");
 
     sortProductPrice.addEventListener("change", async () => {
-      // console.log("Change sort", sortProductPrice.value);
+      console.log("Change sort", sortProductPrice.value);
       const { data } = await sortproductAsc(sortProductPrice.value);
       products.innerHTML = productTemplate(data);
     });

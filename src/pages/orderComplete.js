@@ -17,9 +17,7 @@ const OrderComplete = {
     
     <div class="max-w-3xl mx-auto px-4 pt-16 pb-24 text-center">
         <div class="mb-8">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-32 w-32 ml-52" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-            </svg>
+           <img  class="w-30 ml-72" src="/src/images/complete.png"/>
         </div>
         <h2 class="text-gray-800 font-medium text-3xl mb-3">
             YOUR ORDER IS COMPLETED!

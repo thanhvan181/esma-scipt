@@ -1,23 +1,85 @@
-import { getAll } from "../api/productapi";
+import { getAll, get, paginateProduct } from "../api/productapi";
+import { addTocart, getTotalItems } from "../utils/cart";
+import toastr from "toastr";
+import "toastr/build/toastr.min.css";
+import { reRender } from "../utils";
+import Header from "../components/header";
 
-const RecomendProduct = {
+const ProductNew = {
   async render() {
-    const { data } = await getAll();
+    // const { data } = await getAll();
+    const { data: paginate_Recomment, headers } = await paginateProduct();
+    const listPage = [];
+
+    const totalPage = headers["x-total-count"] / 4;
+    for (let i = 1; i < totalPage + 1; i++) {
+      listPage.push(
+        `  <button class="page-btn hover:bg-gray-700  px-2 rounded page-item w-12 h-12 font-medium" data-index="${i}">${i}</button>`
+      );
+    }
+    console.log("TotalPage", totalPage);
     return /* html */ `
-        
-         <div class="container pb-16">
+      <div class="container pb-16">
       <h2 class="text-2xl font-medium text-gray-800 uppercase mb-6">
-        Recomment For Yours
+     Recomment For Your
       </h2>
-      <div class="grid grid-cols-4 gap-6">
-      ${data
-        .map((product) => {
-          return /* html */ `
+      <div id="recomment-home" class="grid grid-cols-4 gap-6">
+      ${this.reRenderPage(paginate_Recomment)}
+      </div>
+    </div>
+    <div class="flex items-center justify-center mb-12 text-gray-300 flex items-center space-x-2 select-none">
+        <button class="h-16 w-16 p-1 hover:bg-gray-700 rounded page-control" data-action="minus"><svg fill="currentColor" viewBox="0 0 20 20">
+            <path fill-rule="evenodd"
+                d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z"
+                clip-rule="evenodd"></path>
+        </svg></button>
+        <div class="space-x-1">
+       
+          ${listPage.join("")}
+        </div>
+        <button class="h-16 w-16 p-1 hover:bg-gray-700 rounded page-control" data-action="plus"><svg fill="currentColor" viewBox="0 0 20 20">
+            <path fill-rule="evenodd"
+                d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
+                clip-rule="evenodd"></path>
+        </svg>
+        </button>
+    </div>
+
+       `;
+  },
+  afterRender() {
+    const btnAddToCart = document.querySelectorAll(".btn_addcart");
+    btnAddToCart.forEach((btn) => {
+      btn.addEventListener("click", async () => {
+        const id = btn.dataset.id;
+        const { data } = await get(id);
+        addTocart({ ...data, quantity: 1 }, () => {
+          toastr.success("Đã thêm");
+          document.querySelector("#quantity-item").innerHTML = getTotalItems();
+          reRender(Header, "#header");
+        });
+      });
+    });
+    const pageButtons = document.querySelectorAll(".page-btn");
+    pageButtons.forEach((btn_page) => {
+      btn_page.addEventListener("click", async (e) => {
+        console.log("DataIndex", { e });
+        const { data } = await paginateProduct(e.target.dataset.index);
+        document.querySelector("#recomment-home").innerHTML =
+          this.reRenderPage(data);
+      });
+    });
+  },
+  reRenderPage(data) {
+    return /* html */ `
+     ${data
+       .map((product) => {
+         return /* html */ `
        
                  <div class="group overflow-hidden rounded bg-white shadow">
             <div class="relative table-row-group">
-               <a href="#">
-                <img src="${product.imageIntro}" class="rounded-tl-lg rounded-tr-lg" />
+               <a href="/products/${product.id}">
+                <img src="${product.imageIntro}" class="rounded-tl-lg rounded-tr-lg"  />
               </a>
                
               <div
@@ -44,7 +106,7 @@ const RecomendProduct = {
                   </svg>
                 </a>
                 <a
-                  href=""
+                  href="/products/${product.id}"
                   class="bg-primary flex h-8 w-9 items-center justify-center rounded-full text-lg text-white transition hover:bg-gray-800"
                 >
                   <svg
@@ -92,18 +154,18 @@ const RecomendProduct = {
                 <div class="text-xs text-gray-500 ml-4">(140)</div>
               </div>
             </div>
-            <a href="" class="block w-full py-1 text-center text-white bg-primary border border-primary rounded-b hover:bg-transparent hover:text-primary transition">Add to cart</a>
+            <button href="" data-id="${product.id}" class="block w-full py-1 text-center text-white bg-primary border border-primary rounded-b hover:bg-transparent hover:text-primary transition btn_addcart">Add to cart</button>
             
           </div>
            
         
         `;
-        })
-        .join("")}
-      </div>
-    </div>
+       })
+       .join("")}
 
-       `;
+
+
+    `;
   },
 };
-export default RecomendProduct;
+export default ProductNew;

@@ -12,21 +12,21 @@ const Footer = {
         </p>
         <div class="flex space-x-6">
           <a href="" class="text-gray-400 hover:text-gray-500">
-            <img src="./src/images/facebook.jpeg" alt="" class="w-10">
+            <img src="src/images/facebook.jpeg" alt="" class="w-10">
             
 
           </a>
             <a href="" class="text-gray-400 hover:text-gray-500">
-            <img src="./src/images/twitter.png" alt="" class="w-10">
+            <img src="src/images/twitter.png" alt="" class="w-10">
 
           </a>
             <a href="" class="text-gray-400 hover:text-gray-500">
-            <img src="./src/images/instagam.jpeg" alt="" class="w-10">
+            <img src="src/images/instagam.jpeg" alt="" class="w-10">
 
           </a>
             <a href="" class="text-gray-400 hover:text-gray-500">
             
-              <img src="./src/images/linkdin.png" alt="" class="w-10">
+              <img src="src/images/linkdin.png" alt="" class="w-10">
           </a>
         </div>
       </div>

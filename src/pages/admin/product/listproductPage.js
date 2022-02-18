@@ -52,7 +52,7 @@ const ListProductPage = {
             <td class="py-4 px-4 text-center">NAME</td>
             <td class="py-4 px-4 text-center">CATEGORY</td>
             <td class="py-4 px-4 text-center">PRICE</td>
-            <td class="py-4 px-4 text-center">SALE</td>
+           
             
             <td class="py-4 px-4 text-center">CLASSIFY</td>
           
@@ -95,9 +95,7 @@ const ListProductPage = {
             <td class="font-medium text-center">
              ${element.price}
             </td>
-              <td class="font-medium text-center">
-             ${element.sale}
-            </td>
+            
            
               <td class="font-medium text-center">
              ${element.classify}

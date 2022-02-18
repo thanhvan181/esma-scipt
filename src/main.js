@@ -24,6 +24,9 @@ import ListBlogPage from './pages/admin/blog/listBlogPage';
 import AddBlogPage from './pages/admin/blog/addblogPage';
 import EditBlogPage from './pages/admin/blog/editblogPage';
 import ListOrder from "./pages/admin/order/listorder";
+import EditOrder from "./pages/admin/order/editorder";
+import YourOrderPage from "./pages/yourorderPage"
+
 
 
 
@@ -123,6 +126,16 @@ router.on({
   },
   "admin/order": () => {
     renders(ListOrder);
+  }, 
+  "editorder/:id": ({data}) => {
+    renders(EditOrder, data.id);
+
+
+  },
+
+  "/yourorder": () => {
+    renders(YourOrderPage);
+
   }
 });
 router.resolve();

@@ -126,7 +126,7 @@ const EditProducPage = {
     const CLOUDINARY_PRESET = "ppcnsqib";
     formEditproduct.addEventListener("submit", async (e) => {
       e.preventDefault();
-      const size = document.querySelectorAll('input[name="size"]:checked');
+      // const size = document.querySelectorAll('input[name="size"]:checked');
       const imgProduct = document.querySelector("#img-product");
       let imageIntroUrl;
       const file = imgProduct.files[0];

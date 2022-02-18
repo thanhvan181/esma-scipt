@@ -51,3 +51,8 @@ export const productCate = (sex) => {
  const url = `/products?classify=${sex}`;
   return axiosClient.get(url);
 }
+export const paginateProduct = (page = 1, limit = 4) => {
+  const url = `products?_page=${page}&_limit=${limit}`;
+  return axiosClient.get(url);
+
+} 

@@ -1,6 +1,9 @@
 import toastr from "toastr";
 import { signin } from "../api/userApi";
 import "toastr/build/toastr.min.css";
+import $ from "jquery";
+import validate from "jquery-validation";
+
 
 const SingIn = {
   render() {
@@ -15,11 +18,11 @@ const SingIn = {
             
             <div>
                 <label class="block mb-1 font-bold text-gray-500">Email</label>
-                <input type="email" class="w-full border-2 border-gray-200 p-3 rounded outline-none focus:border-purple-500" id="email">
+                <input type="email" class="w-full border-2 border-gray-200 p-3 rounded outline-none focus:border-purple-500" id="email" name="email" required>
             </div>
             <div>
                 <label class="block mb-1 font-bold text-gray-500">Password</label>
-                <input type="password" class="w-full border-2 border-gray-200 p-3 rounded outline-none focus:border-purple-500" id="password">
+                <input type="password" class="w-full border-2 border-gray-200 p-3 rounded outline-none focus:border-purple-500" id="password" name="password" required>
             </div>
             <p class="mt-4 text-gray-600 text-center">
                 Don't have an account? <a href="/signup" class="text-primary">Register Now
@@ -50,6 +53,7 @@ const SingIn = {
   },
   afterRender() {
     const formSignin = document.querySelector("#formSignin");
+    
         formSignin.addEventListener("submit", async (e) => {
             e.preventDefault();
             try {

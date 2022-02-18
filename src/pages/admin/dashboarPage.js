@@ -1,8 +1,13 @@
-
 import sideBar from "../../components/admin/sidebar";
-
+import { getAll } from "../../api/productapi";
+import { listTotal } from "../../api/orderAPI";
+import { list } from "../../api/userApi";
 const Dashboard = {
-  render() {
+  async render() {
+    const { data: product } = await getAll();
+    const { data: user } = await list();
+    const { data: order } = await listTotal();
+
     return /* html */ `
    
 
@@ -28,7 +33,9 @@ const Dashboard = {
               </svg>
             </div>
             <div class="mx-5">
-              <h4 class="text-2xl font-semibold text-gray-700">8,282</h4>
+              <h4 class="text-2xl font-semibold text-gray-700">${
+                user.length
+              }</h4>
               <div class="text-gray-500">New Users</div>
             </div>
           </div>
@@ -43,7 +50,9 @@ const Dashboard = {
               </svg>
             </div>
             <div class="mx-5">
-              <h4 class="text-2xl font-semibold text-gray-700">200,521</h4>
+              <h4 class="text-2xl font-semibold text-gray-700">${
+                order.length
+              }1</h4>
               <div class="text-gray-500">Total Orders</div>
             </div>
           </div>
@@ -57,7 +66,9 @@ const Dashboard = {
               </svg>
             </div>
             <div class="mx-5">
-              <h4 class="text-2xl font-semibold text-gray-700">215,542</h4>
+              <h4 class="text-2xl font-semibold text-gray-700">${
+                product.length
+              }</h4>
               <div class="text-gray-500">Available Products</div>
             </div>
           </div>

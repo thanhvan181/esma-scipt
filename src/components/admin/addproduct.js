@@ -91,7 +91,7 @@ const addProduct = {
     const CLOUDINARY_PRESET = "ppcnsqib";
     formAddProduct.addEventListener("submit", async function (e) {
       e.preventDefault();
-      const size = document.querySelectorAll('input[name="size"]:checked');
+      // const size = document.querySelectorAll('input[name="size"]:checked');
       const file = imgProduct.files[0];
 
       const fileAlbum = productAlbum.files;

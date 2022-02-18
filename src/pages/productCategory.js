@@ -266,7 +266,7 @@ ${Footer.render()}
         `;
   },
   async afterRender(classify) {
-    
+    Navbar.afterRender();
     const sortProductPriceCate = document.querySelector("#sortproduct");
     let productsCate = document.querySelector("#products");
     sortProductPriceCate.addEventListener("change", async () => {
