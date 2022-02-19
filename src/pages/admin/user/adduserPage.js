@@ -1,5 +1,7 @@
 import sideBar from "../../../components/admin/sidebar";
 import { signup } from "../../../api/userApi";
+import $ from "jquery";
+import validate from "jquery-validation";
 
 const AddUserPage = {
   render() {
@@ -11,15 +13,15 @@ const AddUserPage = {
             <form class="space-y-5" id="add-user" enctype="multipart/form-data" method="POST">
             <div>
                 <label class="block mb-1 font-bold text-gray-500">Username</label>
-                <input type="text" class="w-full border-2 border-gray-200 p-3 rounded outline-none focus:border-purple-500" id="username" cols>
+                <input type="text" class="w-full border-2 border-gray-200 p-3 rounded outline-none focus:border-purple-500" id="username" name="username" cols>
             </div>
             <div>
                 <label class="block mb-1 font-bold text-gray-500">Email</label>
-                <input type="text" class="w-full border-2 border-gray-200 p-3 rounded outline-none focus:border-purple-500" id="email">
+                <input type="text" class="w-full border-2 border-gray-200 p-3 rounded outline-none focus:border-purple-500" id="email" name="email">
             </div>
              <div>
                 <label class="block mb-1 font-bold text-gray-500">Password</label>
-              <input type="pass" class="w-full border-2 border-gray-200 p-3 rounded outline-none focus:border-purple-500" id="password">
+              <input type="pass" class="w-full border-2 border-gray-200 p-3 rounded outline-none focus:border-purple-500" id="password" name="txtpassword">
             </div>
            
            
@@ -42,18 +44,49 @@ const AddUserPage = {
         `;
   },
   afterRender() {
+    $("#add-user").validate({
+      rules: {
+        username: {
+          required: true,
+        },
+        email: {
+          required: true,
+          email: true,
+        },
+        txtpassword: {
+          required: true,
+          minlength: 6,
+        },
+        messages: {
+          username: {
+            required: "This field is required.",
+          },
+          email: {
+            required: "We need your email address to contact you",
+            email:
+              "Your email address must be in the format of name@domain.com",
+          },
+          txtpassword: {
+            required: "This field is required.",
+            txtpassword: "Please enter at least 6 characters.",
+          },
+        },
+      },
+    });
     console.log("Dang trong adminuser");
     const formAddUser = document.querySelector("#add-user");
     formAddUser.addEventListener("submit", (e) => {
       e.preventDefault();
-      
-      signup({
-        username: document.querySelector("#username").value,
-        email: document.querySelector("#email").value,
-        password: document.querySelector("#password").value,
-       
-      });
-      window.location.href = "/admin/user"
+      console.log("vali", $("#add-user").validate());
+      if ($("#add-user").validate().errorList.length == 0) {
+        console.log("dangky");
+        signup({
+          username: document.querySelector("#username").value,
+          email: document.querySelector("#email").value,
+          password: document.querySelector("#password").value,
+        });
+        window.location.href = "/admin/user";
+      }
     });
   },
 };

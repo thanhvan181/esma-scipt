@@ -4,6 +4,9 @@ import { reRender } from "../../../utils";
 import toastr from "toastr";
 import "toastr/build/toastr.min.css";
 import { orderTableTemplate } from "../../../utils";
+import $ from "jquery";
+import validate from "jquery-validation";
+
 const EditOrder = {
   async render(id) {
     // console.log("Id", id);
@@ -22,25 +25,25 @@ const EditOrder = {
             <div class="grid grid-cols-1 gap-6 mt-4 sm:grid-cols-2">
                 <div>
                 <label class="text-gray-700" for="username">Username</label>
-                <input id="name_orderupdate" class="w-full mt-2 border-gray-200 rounded-md focus:border-indigo-600 focus:ring focus:ring-opacity-40 focus:ring-indigo-500" type="text" value="${
+                <input name="username" id="name_orderupdate" class="w-full mt-2 border-gray-200 rounded-md focus:border-indigo-600 focus:ring focus:ring-opacity-40 focus:ring-indigo-500" type="text" value="${
                   data.name
                 }">
                 </div>
                 <div>
                 <label class="text-gray-700" for="emailAddress">Email</label>
-                <input id="email_orderupdate" class="w-full mt-2 border-gray-200 rounded-md focus:border-indigo-600 focus:ring focus:ring-opacity-40 focus:ring-indigo-500" type="email" value="${
+                <input name="email" id="email_orderupdate" class="w-full mt-2 border-gray-200 rounded-md focus:border-indigo-600 focus:ring focus:ring-opacity-40 focus:ring-indigo-500" type="email" value="${
                   data.email
                 }">
                 </div>
                 <div>
                 <label class="text-gray-700" for="password">Phone</label>
-                <input id="phone_orderupdate"class="w-full mt-2 border-gray-200 rounded-md focus:border-indigo-600 focus:ring focus:ring-opacity-40 focus:ring-indigo-500" type="text" value="${
+                <input name="phone" id="phone_orderupdate"class="w-full mt-2 border-gray-200 rounded-md focus:border-indigo-600 focus:ring focus:ring-opacity-40 focus:ring-indigo-500" type="text" value="${
                   data.phone
                 }">
                 </div>
                 <div>
                 <label class="text-gray-700" for="password">Address</label>
-                <input id="address_orderupdate" class="w-full mt-2 border-gray-200 rounded-md focus:border-indigo-600 focus:ring focus:ring-opacity-40 focus:ring-indigo-500" type="text" value="${
+                <input name="address" id="address_orderupdate" class="w-full mt-2 border-gray-200 rounded-md focus:border-indigo-600 focus:ring focus:ring-opacity-40 focus:ring-indigo-500" type="text" value="${
                   data.address
                 }">
                 </div>
@@ -152,18 +155,58 @@ const EditOrder = {
        `;
   },
   afterRender(id) {
+    $("#update_order").validate({
+      rules: {
+        username: {
+          required: true,
+        },
+        email: {
+          required: true,
+          email: true,
+        },
+        phone: {
+          required: true,
+          number: true,
+        },
+        address: {
+          required: true,
+        },
+      },
+      messages: {
+        username: {
+          required: "This field is required.",
+        },
+        email: {
+          required: "This field is required.",
+          email: "Please enter a valid email address.",
+        },
+        phone: {
+          required: "This field is required.",
+          number: "Please enter a valid number.",
+        },
+        address: {
+          required: "This field is required.",
+        },
+      },
+    });
     const updateOrder = document.querySelector("#update_order");
     updateOrder.addEventListener("submit", async (e) => {
       e.preventDefault();
-      const { data: updatedetailOrder } = await getOrder(id);
 
-      update(id, {
-        ...updatedetailOrder,
-        name: document.querySelector("#name_orderupdate").value,
-        email: document.querySelector("#email_orderupdate").value,
-        phone: document.querySelector("#phone_orderupdate").value,
-        address: document.querySelector("#address_orderupdate").value,
-      });
+      if($("#update_order").validate().errorList.length == 0){
+        const { data: updatedetailOrder } = await getOrder(id);
+
+        update(id, {
+          ...updatedetailOrder,
+          name: document.querySelector("#name_orderupdate").value,
+          email: document.querySelector("#email_orderupdate").value,
+          phone: document.querySelector("#phone_orderupdate").value,
+          address: document.querySelector("#address_orderupdate").value,
+        });
+        toastr.success("Edit thanh cong")
+
+      }
+      
     });
     const removeOrder = document.querySelectorAll(".btn");
     const renderOrder = document.querySelector("#body-order");

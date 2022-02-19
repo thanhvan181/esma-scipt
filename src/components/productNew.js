@@ -1,13 +1,12 @@
-import { getAll, get, paginateProduct } from "../api/productapi";
+import { get, paginateProduct } from "../api/productapi";
 import { addTocart, getTotalItems } from "../utils/cart";
 import toastr from "toastr";
 import "toastr/build/toastr.min.css";
-import { reRender } from "../utils";
+
 import Header from "../components/header";
 
 const ProductNew = {
   async render() {
-    // const { data } = await getAll();
     const { data: paginate_Product, headers } = await paginateProduct();
     const listPage = [];
 
@@ -48,6 +47,7 @@ const ProductNew = {
        `;
   },
   afterRender() {
+    Header.afterRender();
     const btnAddToCart = document.querySelectorAll(".btn_addcart");
     btnAddToCart.forEach((btn) => {
       btn.addEventListener("click", async () => {
@@ -56,7 +56,6 @@ const ProductNew = {
         addTocart({ ...data, quantity: 1 }, () => {
           toastr.success("Đã thêm");
           document.querySelector("#quantity-item").innerHTML = getTotalItems();
-          reRender(Header, "#header");
         });
       });
     });
@@ -65,20 +64,16 @@ const ProductNew = {
       btn_page.addEventListener("click", async (e) => {
         console.log("DataIndex", { e });
         const { data } = await paginateProduct(e.target.dataset.index);
-        document.querySelector("#home-content").innerHTML = this.reRenderPage(data);
-        
-        
-
-        
+        document.querySelector("#home-content").innerHTML =
+          this.reRenderPage(data);
       });
     });
-   
   },
-  reRenderPage (data) {
+  reRenderPage(data) {
     return /* html */ `
      ${data
-        .map((product) => {
-          return /* html */ `
+       .map((product) => {
+         return /* html */ `
        
                  <div class="group overflow-hidden rounded bg-white shadow">
             <div class="relative table-row-group">
@@ -164,12 +159,12 @@ const ProductNew = {
            
         
         `;
-        })
-        .join("")}
+       })
+       .join("")}
 
 
 
-    `
-  }
+    `;
+  },
 };
 export default ProductNew;

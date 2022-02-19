@@ -53,32 +53,57 @@ const SingIn = {
   },
   afterRender() {
     const formSignin = document.querySelector("#formSignin");
+      $("#formSignin").validate({
+        rules: {
+          email: {
+            required: true,
+            email: true,
+          },
+          password: {
+            required: true,
+            minlength: 6,
+          },
+          messages: {
+            email: {
+              required: "We need your email address to contact you",
+              email:
+                "Your email address must be in the format of name@domain.com",
+            },
+            password: {
+              password: "Please enter at least 6 characters.",
+              required: "This field is required.",
+            },
+          },
+        },
+      }); 
+
+   
     
-        formSignin.addEventListener("submit", async (e) => {
-            e.preventDefault();
-            try {
-                // call API login
-                const { data } = await signin({
-                    email: document.querySelector("#email").value,
-                    password: document.querySelector("#password").value,
-                });
-                console.log("Data", data)
-                // lưu dữ liệu vào localStorage
-                localStorage.setItem("user", JSON.stringify(data.user));
-                toastr.success("Bạn đã đăng nhập thành công, chờ 3s để chuyển trang");
-                setTimeout(() => {
-                // kiểm tra quyền dựa trên ID
-                    if (data.user.id === 1) {
-                        document.location.href = "/admin/dashboard";
-                    } else {
-                        document.location.href = "/";
-                    }
-                }, 3000);
-            } catch (error) {
-                toastr.error(error.response.data);
-              
-            }
-        });
+      formSignin.addEventListener("submit", async (e) => {
+        e.preventDefault();
+        if ($("#formSignin").validate()){
+             const { data } = await signin({
+               email: document.querySelector("#email").value,
+               password: document.querySelector("#password").value,
+             });
+             console.log("Data", data);
+             // lưu dữ liệu vào localStorage
+             localStorage.setItem("user", JSON.stringify(data.user));
+             toastr.success(
+               "Bạn đã đăng nhập thành công, chờ 3s để chuyển trang"
+             );
+             setTimeout(() => {
+               // kiểm tra quyền dựa trên ID
+               if (data.user.id === 1) {
+                 document.location.href = "/admin/dashboard";
+               } else {
+                 document.location.href = "/";
+               }
+             }, 3000);
+
+        }
+         
+      });
     },
 
 };

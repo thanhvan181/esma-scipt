@@ -81,11 +81,11 @@ const EditProducPage = {
             <div class="form-group">
                  <label class="block mb-1 font-bold text-gray-500">Classify product</label>
                 <div class="flex justify-start items-center gap-3">
-                <input type="radio" name="classify" value="male" id="male" checked>
-                <label for="male" class=" py-1 classify text-gray-800"> Male
+                <input type="radio" name="classify" value="Bed" id="male" checked>
+                <label for="male" class=" py-1 classify text-gray-800"> Bed
                 </label>
-                <input type="radio" name="classify" value="female" id="famale" >
-                <label for="famale" class=" py-1 classify text-gray-800"> Female
+                <input type="radio" name="classify" value="Sofa" id="famale" >
+                <label for="famale" class=" py-1 classify text-gray-800"> Sofa
                 </label>
                 </div>
             </div>

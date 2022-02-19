@@ -3,7 +3,7 @@ import Navbar from "../components/navbar";
 import Footer from "../components/footer";
 import { getTotalPrice } from "../utils/cart";
 import { getLocalStorage, setLocalStorage } from "../utils";
-// import { get } from "../api/productapi";
+
 import { add } from "../api/orderAPI";
 import toastr from "toastr";
 import "toastr/build/toastr.min.css";
@@ -40,7 +40,7 @@ const CheckOutPage = {
                         <label class="text-gray-600 mb-2 block">
                            Name
                         </label>
-                        <input id="name_order" class="input-box" type="text" value=${
+                        <input id="name_order" class="resize rounded-md w-full" type="text" value=${
                           user && user.username ? user.username : ` `
                         }>
                     </div>
@@ -49,7 +49,7 @@ const CheckOutPage = {
                         <label class="text-gray-600 mb-2 block">
                             Address <span class="text-primary">*</span>
                         </label>
-                        <input id="address" type="text" class="input-box" value=${
+                        <input id="address" type="text" class="resize rounded-md w-full" value=${
                           user && user.address ? user.address : ` `
                         } >
                     </div>
@@ -57,7 +57,7 @@ const CheckOutPage = {
                         <label class="text-gray-600 mb-2 block">
                             Phone <span class="text-primary">*</span>
                         </label>
-                        <input id="phone"type="text" class="input-box" value=${
+                        <input id="phone"type="text" class="resize rounded-md w-full" value=${
                           user && user.phone ? user.phone : ` `
                         }>
                     </div>
@@ -65,7 +65,7 @@ const CheckOutPage = {
                         <label class="text-gray-600 mb-2 block">
                             Email 
                         </label>
-                        <input id ="email_order"type="text" class="input-box" value=${
+                        <input id="email_order" type="text" class="resize rounded-md w-full" value=${
                           user && user.email ? user.email : ` `
                         }>
                     </div>

@@ -15,6 +15,7 @@ const AddProductList = {
        `;
   },
   async afterRender() {
+    
     return await addProduct.afterRender();
   },
 };
