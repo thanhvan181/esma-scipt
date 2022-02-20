@@ -3,8 +3,8 @@
   "version": "0.0.0",
   "scripts": {
     "dev": "vite",
-    "start:server": "json-server-auth --watch db.json --port 3002",
-    "start": "node server.js",
+    "start": "json-server-auth --watch db.json --port 3002",
+    "start:server": "node server.js",
     "build": "vite build",
     "preview": "vite preview"
   },
