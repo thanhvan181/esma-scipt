@@ -225,7 +225,7 @@ const EditOrder = {
         console.log("sau");
 
         toastr.success("Ban da xoa thanh cong san pham ");
-        // location.reload();
+        location.reload();
       });
     });
   },

@@ -1,29 +1,40 @@
+import Swiper from "swiper/bundle";
+import "swiper/css/bundle";
+
 const Banner = {
-    render() {
-        return /* html */ `
-           <div class=" mt-32  bg-cover bg-no-repeat bg-center py-36 relative" style="background-image: url('src/images/banner-bg.jpg')">
-        <div class="container">
-            <!-- banner content -->
-            <h1 class="xl:text-6xl md:text-5xl text-4xl text-gray-800 font-medium mb-4">
-                Best Collection For <br class="hidden sm:block"> Home Decoration
-            </h1>
-            <p class="text-base text-gray-600 leading-6">
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa <br class="hidden sm:block">
-                assumenda aliquid inventore nihil laboriosam odio
-            </p>
-            <!-- banner button -->
-            <div class="mt-12">
-                <a href="shop.html" class="bg-primary border border-primary text-white px-8 py-3 font-medium rounded-md uppercase hover:bg-transparent
-               hover:text-primary transition">
-                    Shop now
-                </a>
+  render() {
+    return /* html */ `
+             <div class="swiper mt-10">
+            <!-- Additional required wrapper -->
+            <div class="swiper-wrapper">
+                <!-- Slides -->
+                <div class="swiper-slide">
+                    <img class="w-full" src="http://gendaiweb.com/wp-content/uploads/2021/06/gdw-35sfkkk.jpg" alt="" />
+                </div>
+                <div class="swiper-slide">
+                    <img class="w-full" src="https://minhduongads.com/wp-content/uploads/2020/01/mau-thiet-ke-banner-giai-phap-loc-nuoc-dep-minhduongmedia.jpg" alt="" />
+                </div>
+                <div class="swiper-slide">
+                    <img class="w-full" src="https://thuviennhadep.net/wp-content/uploads/banner-noi-that-9.jpg" alt="" />
+                </div>
             </div>
-            <!-- banner button end -->
-            <!-- banner content end -->
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-pagination"></div>
         </div>
-    </div>
-    
         `;
-    }
-}
-export default Banner
+  },
+  afterRender() {
+    const swiper = new Swiper(".swiper", {
+      pagination: {
+        el: ".swiper-pagination",
+        type: "progressbar",
+      },
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
+    });
+  },
+};
+export default Banner;

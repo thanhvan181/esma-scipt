@@ -56,3 +56,7 @@ export const paginateProduct = (page = 1, limit = 4) => {
   return axiosClient.get(url);
 
 } 
+export const productRelaship = (id) => {
+  const url = `categories/${id}/?_embed=products`;
+  return axiosClient.get(url);
+}

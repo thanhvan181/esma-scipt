@@ -28,7 +28,7 @@ const ShopPage = {
   },
   afterRender() {
     Header.afterRender();
-    Shop.afterRender();
+   
 
     return Shop.afterRender();
   },

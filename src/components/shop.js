@@ -237,7 +237,7 @@ const Shop = {
           </div>
           <button href=""
           data-id="${itemshop.id}"
-            class="  btn_addcart block w-full py-1 text-center text-white bg-primary border border-primary rounded-b hover:bg-transparent hover:text-primary transition ">Add
+            class="  btn_addcartshop block w-full py-1 text-center text-white bg-primary border border-primary rounded-b hover:bg-transparent hover:text-primary transition ">Add
             to cart</button>
 
         </div>
@@ -265,13 +265,14 @@ const Shop = {
       const { data } = await sortproductAsc(sortProductPrice.value);
       products.innerHTML = productTemplate(data);
     });
-    const btnAddToCart = document.querySelectorAll(".btn_addcart");
+    const btnAddToCart = document.querySelectorAll(".btn_addcartshop");
     btnAddToCart.forEach((btn) => {
       btn.addEventListener("click", async () => {
         const id = btn.dataset.id;
         const { data } = await get(id);
         addTocart({ ...data, quantity: 1 }, () => {
           toastr.success("Đã thêm");
+          console.log("Dang trong addtocart shop")
           document.querySelector("#quantity-item").innerHTML = getTotalItems();
         });
       });

@@ -35,6 +35,7 @@ const homePage = {
         `;
   },
   afterRender() {
+    Banner.afterRender()
     ProductNew.afterRender();
      RecomendProduct.afterRender();
     return Navbar.afterRender();

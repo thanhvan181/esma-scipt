@@ -65,5 +65,8 @@ const BlogPage = {
 
         `;
   },
+  afterRender() {
+    Navbar.afterRender()
+  }
 };
 export default BlogPage;

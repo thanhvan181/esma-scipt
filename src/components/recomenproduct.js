@@ -48,18 +48,23 @@ const ProductNew = {
        `;
   },
   afterRender() {
-    const btnAddToCart = document.querySelectorAll(".btn_addcart");
-    btnAddToCart.forEach((btn) => {
-      btn.addEventListener("click", async () => {
-        const id = btn.dataset.id;
-        const { data } = await get(id);
-        addTocart({ ...data, quantity: 1 }, () => {
-          toastr.success("Đã thêm");
-          document.querySelector("#quantity-item").innerHTML = getTotalItems();
-          reRender(Header, "#header");
+    const addEventCartRecomment = () => {
+      const btnAddToCart = document.querySelectorAll(".btn_addcartRecomment");
+      btnAddToCart.forEach((btn) => {
+        btn.addEventListener("click", async () => {
+          const id = btn.dataset.id;
+          const { data } = await get(id);
+
+          addTocart({ ...data, quantity: 1 }, () => {
+            toastr.success("Đã thêm");
+            console.log("Dang trong addtocart");
+            document.querySelector("#quantity-item").innerHTML =
+              getTotalItems();
+          });
         });
       });
-    });
+    };
+   addEventCartRecomment();
     const pageButtons = document.querySelectorAll(".page-btn");
     pageButtons.forEach((btn_page) => {
       btn_page.addEventListener("click", async (e) => {
@@ -67,6 +72,7 @@ const ProductNew = {
         const { data } = await paginateProduct(e.target.dataset.index);
         document.querySelector("#recomment-home").innerHTML =
           this.reRenderPage(data);
+          addEventCartRecomment()
       });
     });
   },
@@ -154,7 +160,7 @@ const ProductNew = {
                 <div class="text-xs text-gray-500 ml-4">(140)</div>
               </div>
             </div>
-            <button href="" data-id="${product.id}" class="block w-full py-1 text-center text-white bg-primary border border-primary rounded-b hover:bg-transparent hover:text-primary transition btn_addcart">Add to cart</button>
+            <button href="" data-id="${product.id}" class="block w-full py-1 text-center text-white bg-primary border border-primary rounded-b hover:bg-transparent hover:text-primary transition btn_addcartRecomment">Add to cart</button>
             
           </div>
            

@@ -8,6 +8,10 @@ export const list = () => {
   const url = `orders`;
   return axiosClient.get(url);
 };
+export const listone = (id) => {
+  const url = `orders/?userId=${id}`;
+  return axiosClient.get(url);
+};
 export const listTotal = () => {
   const url = `orders`;
   return axiosClient.get(url);

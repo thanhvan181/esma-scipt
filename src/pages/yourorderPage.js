@@ -1,11 +1,18 @@
 import Header from "../components/header";
 import Navbar from "../components/navbar";
 import Footer from "../components/footer";
-import { list } from "../api/orderAPI";
+import { list, listone } from "../api/orderAPI";
+import { getLocalStorage } from "../utils";
 
 const YourOrderPage = {
   async render() {
-    const { data: yourorder } = await list();
+    const id = getLocalStorage("user").id;
+    console.log("Id",id);
+    
+    
+
+    const { data: yourorder } = await listone(id);
+
     return /* html */ `
     ${Header.render()}
     ${await Navbar.render()}
@@ -42,8 +49,9 @@ const YourOrderPage = {
         </thead>
         <tbody>
         ${yourorder.map((item) => {
-          return item.product.map((product) => {
-            return /* html */ `
+          return item.product
+            .map((product) => {
+              return /* html */ `
 
       <tr
             v-for="product in products"
@@ -75,7 +83,8 @@ const YourOrderPage = {
            
           </tr>
             `;
-          }).join("");
+            })
+            .join("");
         })}
     
            

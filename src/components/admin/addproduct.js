@@ -5,7 +5,6 @@ import toastr from "toastr";
 import $ from "jquery";
 import validate from "jquery-validation";
 
-
 import "toastr/build/toastr.min.css";
 
 const addProduct = {
@@ -85,7 +84,7 @@ const addProduct = {
         `;
   },
   afterRender() {
-    $("#addproduct").validate({
+    const valid = $("#addproduct").validate({
       rules: {
         username: {
           required: true,
@@ -93,7 +92,6 @@ const addProduct = {
         price: {
           required: true,
           number: true,
-         
         },
         intro: {
           required: true,
@@ -110,12 +108,10 @@ const addProduct = {
         messages: {
           username: {
             required: "We need your email address to contact you",
-            
           },
           price: {
-           
             required: "This field is required.",
-            number: "Please enter number"
+            number: "Please enter number",
           },
           intro: {
             required: "This field is required.",
@@ -127,12 +123,11 @@ const addProduct = {
             required: "This field is required.",
           },
           filess: {
-            required: "This field is required."
-          }
+            required: "This field is required.",
+          },
         },
       },
     });
-
     const formAddProduct = document.querySelector("#addproduct");
     const imgProduct = document.querySelector("#img-product");
     const productAlbum = document.querySelector("#product-album");
@@ -142,37 +137,35 @@ const addProduct = {
     const CLOUDINARY_PRESET = "ppcnsqib";
     formAddProduct.addEventListener("submit", async function (e) {
       e.preventDefault();
-     
-      const file = imgProduct.files[0];
+      if (valid.errorList.length === 0) {
+        const file = imgProduct.files[0];
 
-      const fileAlbum = productAlbum.files;
-      const formAddData = new FormData();
+        const fileAlbum = productAlbum.files;
+        const formAddData = new FormData();
 
-      formAddData.append("file", file);
-      formAddData.append("upload_preset", CLOUDINARY_PRESET);
+        formAddData.append("file", file);
+        formAddData.append("upload_preset", CLOUDINARY_PRESET);
 
-      
-      const { data } = await axios.post(CLOUDINARY_API_URL, formAddData, {
-        headers: {
-          "Content-Type": "application/form-data",
-        },
-      });
-      const albums = [];
-      for (var i = 0; i < fileAlbum.length; i++) {
-        let formAddData2 = new FormData();
-
-        formAddData2.append("file", fileAlbum[i]);
-        formAddData2.append("upload_preset", CLOUDINARY_PRESET);
-        let response = await axios.post(CLOUDINARY_API_URL, formAddData2, {
+        const { data } = await axios.post(CLOUDINARY_API_URL, formAddData, {
           headers: {
             "Content-Type": "application/form-data",
           },
         });
+        const albums = [];
+        for (var i = 0; i < fileAlbum.length; i++) {
+          let formAddData2 = new FormData();
 
-        albums.push(response.data.url);
-      }
+          formAddData2.append("file", fileAlbum[i]);
+          formAddData2.append("upload_preset", CLOUDINARY_PRESET);
+          let response = await axios.post(CLOUDINARY_API_URL, formAddData2, {
+            headers: {
+              "Content-Type": "application/form-data",
+            },
+          });
 
-  
+          albums.push(response.data.url);
+        }
+
         addproduct({
           name: document.querySelector("#nameproduct").value,
           price: document.querySelector("#price").value,
@@ -187,9 +180,7 @@ const addProduct = {
         });
         toastr.success("Them thanh cong product");
         window.location.href = "/admin/products";
-
-     
-      
+      }
     });
   },
 };

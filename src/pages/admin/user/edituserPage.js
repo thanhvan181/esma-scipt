@@ -1,6 +1,7 @@
 import sideBar from "../../../components/admin/sidebar";
 import { listedit, get } from "../../../api/userApi";
-
+import toastr from "toastr";
+import "toastr/build/toastr.min.css";
 const EditUserPage = {
   async render(id) {
     const { data: listuser } = await get(id);
@@ -52,14 +53,7 @@ const EditUserPage = {
     const formAddUser = document.querySelector("#edit-user");
     formAddUser.addEventListener("submit", (e) => {
       e.preventDefault();
-      const test = {
-        username: document.querySelector("#username").value,
-        email: document.querySelector("#email").value,
-        password: document.querySelector("#password").value,
-        permission: document.querySelector('input[name="permission"]:checked')
-          .value,
-      };
-    //   console.log("test",test)
+     
 
       listedit(id,{
         id,
@@ -68,6 +62,7 @@ const EditUserPage = {
         password: document.querySelector("#password").value,
        
       });
+      toastr.success("Edit thanh cong user")
       window.location.href = "/admin/user";
     });
   },

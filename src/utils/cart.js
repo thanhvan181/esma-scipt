@@ -12,7 +12,7 @@ export const addTocart = (newItem, next) => {
   if (!exitsItem) {
     cart.push(newItem);
   } else {
-    exitsItem.quantity++;
+    exitsItem.quantity += newItem.quantity;
   }
   setLocalStorage("cart", cart);
   next(cart.length);

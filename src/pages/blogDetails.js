@@ -73,5 +73,8 @@ const { data: post } = await postAPI.read(id);
 
         `;
   },
+  afterRender() {
+    Navbar.afterRender()
+  }
 };
 export default BlogDetails;

@@ -3,6 +3,8 @@ import { addcate } from "../../../api/categoryapi";
 import toastr from "toastr";
 import "toastr/build/toastr.min.css";
 import { reRender } from "../../../utils";
+import $ from "jquery";
+import validate from "jquery-validation";
 
 const AddCatePage = {
   render() {
@@ -16,7 +18,7 @@ const AddCatePage = {
             <form class="space-y-5" id="addcategory" enctype="multipart/form-data" method="POST">
             <div>
                 <label class="block mb-1 font-bold text-gray-500">Name Category</label>
-                <input type="text" class="w-full border-2 border-gray-200 p-3 rounded outline-none focus:border-purple-500" id="title_cate" cols>
+                <input name="namecategory" type="text" class="w-full border-2 border-gray-200 p-3 rounded outline-none focus:border-purple-500" id="title_cate" cols>
             </div>
            
             
@@ -31,15 +33,30 @@ const AddCatePage = {
         `;
   },
   afterRender() {
+    const validCate = $("#addcategory").validate({
+      rules: {
+        namecategory: {
+          required: true,
+        },
+      },
+      messages: {
+        namecategory: {
+          required: "This field is required.",
+        },
+      },
+    });
       const formAddCate = document.querySelector("#addcategory");
       formAddCate.addEventListener('submit', (e)=> {
           e.preventDefault();
-          addcate({
-            title: document.querySelector("#title_cate").value,
+          if (validCate.errorList.length === 0 ){
+              addcate({
+                title: document.querySelector("#title_cate").value,
+              });
+              toastr.success("Add thanh cong Cate");
+              window.location.href = "/admin/category";
 
-          });
-          toastr.success("Add thanh cong Cate");
-          window.location.href = "/admin/category";
+          }
+          
 
 
           

@@ -100,12 +100,20 @@ const CheckOutPage = {
                   `
                 <table>
 
-                    <div>
-                        <h5 class="text-gray-800 font-medium">${checkout.name}</h5>
-                       
+                    <div  class="flex">
+                      <div>
+                      <img src="${checkout.imageIntro}" class="w-32 h-32 my-4" />
+                      </div>
+
+                      <div class="pl-12 my-4">
+                     
+                          <h5 class="text-gray-800 font-medium">${checkout.name}</h5>
+                        
+                     
+                        <p class="text-gray-600">Quanlity: ${checkout.quantity}</p>
+                        <p class="text-gray-800 font-medium"> Price: ${checkout.price}</p>
+                        </div>
                     </div>
-                    <p class="text-gray-600">Quanlity: ${checkout.quantity}</p>
-                    <p class="text-gray-800 font-medium"> Price: ${checkout.price}</p>
                
                 
                 </table>
@@ -151,6 +159,7 @@ const CheckOutPage = {
   },
   afterRender() {
     Navbar.afterRender();
+    const user = getLocalStorage("user");
      let cart = [];
      if (localStorage.getItem("cart")) {
        cart = JSON.parse(localStorage.getItem("cart"));
@@ -161,15 +170,15 @@ const CheckOutPage = {
       e.preventDefault();
       const checkOut = {
         id: Math.round(Math.random() * 700000),
+        userId: user.id,
         name: document.querySelector("#name_order").value,
         address: document.querySelector("#address").value,
         phone: document.querySelector("#phone").value,
         email: document.querySelector("#email_order").value,
         product: cart,
         note: document.querySelector("#content-order").value,
-        day : date,
+        day: date,
         totalMoney: getTotalPrice(),
-
 
         pay: document.querySelector("input[name=pay]:checked").value,
         status: "not approved yet",

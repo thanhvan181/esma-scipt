@@ -104,7 +104,7 @@ const AddBlogPage = {
 
     formAddBlog.addEventListener("submit", async function (e) {
       e.preventDefault();
-      if($("#add_blog").validate().errorList.length == 0){
+      if($("#add_blog").validate().errorList.length === 0){
         const file = imgPost.files[0];
 
         const formData = new FormData();

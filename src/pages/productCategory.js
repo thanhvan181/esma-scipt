@@ -247,7 +247,7 @@ const ProductCategory = {
           </div>
           <button href="" 
           data-id="${itemshop.id}"
-            class=" btn_addcart block w-full py-1 text-center text-white bg-primary border border-primary rounded-b hover:bg-transparent hover:text-primary transition">Add
+            class=" btn_addcartcate block w-full py-1 text-center text-white bg-primary border border-primary rounded-b hover:bg-transparent hover:text-primary transition">Add
             to cart</button>
 
         </div>
@@ -278,13 +278,14 @@ ${Footer.render()}
       //   console.log("DataSortSEx", data);
       productsCate.innerHTML = productTemplate(data);
     });
-    const btnAddToCart = document.querySelectorAll(".btn_addcart");
+    const btnAddToCart = document.querySelectorAll(".btn_addcartcate");
       btnAddToCart.forEach((btn) => {
         btn.addEventListener("click", async () => {
           const id = btn.dataset.id;
           const { data } = await get(id);
           addTocart({ ...data, quantity: 1 }, () => {
             toastr.success("Đã thêm");
+            console.log("Dang trong addtocart category")
             document.querySelector("#quantity-item").innerHTML =
               getTotalItems();
           });
@@ -292,5 +293,6 @@ ${Footer.render()}
     });
     Header.afterRender();
   },
+  
 };
 export default ProductCategory;

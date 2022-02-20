@@ -78,7 +78,7 @@ const AddUserPage = {
     formAddUser.addEventListener("submit", (e) => {
       e.preventDefault();
       console.log("vali", $("#add-user").validate());
-      if ($("#add-user").validate().errorList.length == 0) {
+      if ($("#add-user").validate().errorList.length === 0) {
         console.log("dangky");
         signup({
           username: document.querySelector("#username").value,
