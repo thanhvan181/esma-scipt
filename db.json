@@ -333,66 +333,6 @@
     }
   ],
   "users": [
-    {
-      "email": "vanntph17034@fpt.edu.vn",
-      "password": "$2a$10$fY2ejtdkgbNp4fDdwz5dbec9dU2n.ANyJoRqi2s8kGPvSa6sTohJW",
-      "username": "nguyenvan",
-      "id": 1
-    },
-    {
-      "email": "nguyenthivan18012000@gmai.com",
-      "password": "$2a$10$tR85hj5lsDis1Z.W4HMJz.c/jUS/mr/D06eKYvVeJjkXdTi8J90Kq",
-      "username": "nguyenvan",
-      "id": 2
-    },
-    {
-      "email": "hoaithu12345@gmail.com",
-      "password": "$2a$10$QlKOkuImQxr7p78pB2rN7.flvCuw2bRKiJzDXQRDZ9G6jwmdkqTXa",
-      "username": "hoaithu",
-      "id": 3
-    },
-    {
-      "email": "congdinh@gmail.com",
-      "password": "$2a$10$obfsPpc5JnvkJGGqifTA1esoOQiw32ZBGvTUnlYGGzr96xfkO2u4u",
-      "username": "congdinh",
-      "id": 5
-    },
-    {
-      "email": "minhhieu@gmail.com",
-      "password": "$2a$10$55aKf3gij.ONZCRDmVp.yOGLNFUFejyL9RHNcydTm3RdG3l5Hypam",
-      "username": "vanntph17034",
-      "id": 6
-    },
-    {
-      "email": "vanthanh@gmail.com",
-      "password": "$2a$10$jg7RwyWCjPxkiFGi44GYyuMQK5TohIigOnlX.jvFClBr7IVpjYU3q",
-      "username": "thanhhuyen",
-      "id": 8
-    },
-    {
-      "id": 9,
-      "username": "hanhnhan1i1111",
-      "email": "hanhnhan@gmail.com",
-      "password": "$2a$10$DEWzPnVoevdGLeoPfS1ZKeumw9CVu2r3LVymfUzZOiLvsV8pcZiji"
-    },
-    {
-      "email": "tranlinh@gmail.com",
-      "password": "$2a$10$nZuP9W0VC.mO5.VKVbr.GO967021/rrIBzx/8dBWj0Gg73wTSDQ/m",
-      "username": "tranlinh",
-      "id": 10
-    },
-    {
-      "email": "thuynga@gmail.com",
-      "password": "$2a$10$jqnC9YuxnvN1flAhR.B/8uG.Di6apmRDx.XYtGou8at8kzAurV4nO",
-      "username": "thuynga",
-      "id": 11
-    },
-    {
-      "id": 12,
-      "username": "congduy123",
-      "email": "congduy@gmail.com",
-      "password": "$2a$10$.QWcTA3CjFS4BL7V6AhOwesbL.PUwmmz8NtJJJL7Y1DS3dkRIvdE2"
-    }
   ],
   "orders": [
     {
