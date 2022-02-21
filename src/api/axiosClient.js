@@ -1,6 +1,6 @@
 import axios from "axios";
 export const axiosClient = axios.create({
-  baseURL: "https://json-server-van.herokuapp.com",
+  baseURL: "http://localhost:3002",
   headers: {
     "Content-Type": "application/json",
   },

@@ -41,7 +41,7 @@ const SignUp = {
       `;
   },
  afterRender() {
-   $("#formSignup").validate({
+  const validSignup =  $("#formSignup").validate({
      rules: {
        username: {
          required: true,
@@ -75,7 +75,7 @@ const SignUp = {
     console.log("FormSignUp", formSignup);
         formSignup.addEventListener("submit", function (e) {
           e.preventDefault();
-          if ($("#formSignup").validate()){
+          if (validSignup.errorList.length === 0){
              signup({
                username: document.querySelector("#username").value,
                email: document.querySelector("#email").value,

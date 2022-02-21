@@ -4,7 +4,7 @@ import "swiper/css/bundle";
 const Banner = {
   render() {
     return /* html */ `
-             <div class="swiper mt-10">
+             <div class="swiper mt-32">
             <!-- Additional required wrapper -->
             <div class="swiper-wrapper">
                 <!-- Slides -->

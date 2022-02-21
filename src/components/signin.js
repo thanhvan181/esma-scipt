@@ -53,7 +53,7 @@ const SingIn = {
   },
   afterRender() {
     const formSignin = document.querySelector("#formSignin");
-      $("#formSignin").validate({
+     const valid =  $("#formSignin").validate({
         rules: {
           email: {
             required: true,
@@ -81,7 +81,7 @@ const SingIn = {
     
       formSignin.addEventListener("submit", async (e) => {
         e.preventDefault();
-        if ($("#formSignin").validate()){
+        if (valid.errorList.length === 0){
              const { data } = await signin({
                email: document.querySelector("#email").value,
                password: document.querySelector("#password").value,
