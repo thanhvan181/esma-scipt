@@ -1,3 +1,7 @@
+import toastr from "toastr";
+
+import "toastr/build/toastr.min.css";
+
 export const reRender = async (component, domElement) => {
   if (component) {
     document.querySelector(domElement).innerHTML = await component.render();
@@ -152,4 +156,22 @@ export const getLocalStorage = (key) => {
   if (localStorage.getItem(key)) {
     return JSON.parse(localStorage.getItem(key));
   }
+};
+export const logout = () => {
+  const user = JSON.parse(localStorage.getItem("user"));
+  if(user) {
+     const logout = document.querySelector("#logout");
+     console.log("User", user);
+     document.querySelector("#account-user").innerHTML = user.username;
+
+     logout.addEventListener("click", () => {
+       toastr.success("Logout thành công");
+       localStorage.removeItem("user");
+       localStorage.removeItem("cart");
+
+       window.location.href = "/signin";
+     });
+
+  }
+ 
 };

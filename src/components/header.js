@@ -1,5 +1,5 @@
 import { searchproduct } from "../api/productapi";
-import { productTemplate } from "../utils";
+import { productTemplate, logout } from "../utils";
 import { getTotalItems } from "../utils/cart";
 const Header = {
   render() {
@@ -70,6 +70,7 @@ const Header = {
         productContainer.innerHTML = productTemplate(data);
       }
     });
+    logout();
   },
 };
 export default Header;

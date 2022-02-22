@@ -8,6 +8,7 @@ import Header from "../components/header";
 const ProductNew = {
   async render() {
     const { data: paginate_Product, headers } = await paginateProduct();
+    console.log("DAta", paginate_Product);
     const listPage = [];
 
     const totalPage = headers["x-total-count"] / 4;

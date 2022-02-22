@@ -1,5 +1,5 @@
 import toastr from "toastr";
-import { reRender, getLocalStorage } from "../utils";
+import { logout, getLocalStorage } from "../utils";
 import "toastr/build/toastr.min.css";
 import { getAllCate } from "../api/categoryapi";
 
@@ -97,17 +97,7 @@ const Navbar = {
         `;
   },
   afterRender() {
-    const user = JSON.parse(localStorage.getItem("user"));
-    const logout = document.querySelector("#logout");
-    console.log("User", user);
-    document.querySelector("#account-user").innerHTML = user.username;
-
-    logout.addEventListener("click", () => {
-      toastr.success("Logout thành công");
-      localStorage.removeItem("user");
-      localStorage.removeItem("cart");
-      reRender(Header, "#navbar");
-    });
+    logout();
   },
 };
 export default Navbar;

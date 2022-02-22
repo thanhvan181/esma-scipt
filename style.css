@@ -1,14 +1,15 @@
-
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Roboto:wght@400;500;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Roboto:wght@400;500;700&display=swap");
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-
-
-
-
-
 .error {
   @apply text-red-500;
 }
+.dataTables_wrapper .dataTables_length select {
+    @apply px-32 w-16 
+}
+.dataTables_wrapper{
+  @apply mx-6 mt-6 
+}
+

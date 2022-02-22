@@ -170,7 +170,7 @@ const CheckOutPage = {
       e.preventDefault();
       const checkOut = {
         id: Math.round(Math.random() * 700000),
-        userId: user.id,
+        userId: user ? user.id : user,
         name: document.querySelector("#name_order").value,
         address: document.querySelector("#address").value,
         phone: document.querySelector("#phone").value,

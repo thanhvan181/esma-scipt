@@ -1,0 +1,26 @@
+[
+    {
+        "email": "vanntph17034@fpt.edu.vn",
+        "password": "$2a$10$/bFoM7X6y4lo5AJvkU7e7eUtnNcMnL7R.K9yaSdLra7.O3zHzVhM6",
+        "username": "thanhvan181",
+        "id": 1
+    },
+    {
+        "email": "hoaithu123@gmail.com",
+        "password": "$2a$10$k79w0uDgWwLH8j6gBdEi6utamc9pxkkQmyyqN4UF2LoXa7Nn9aN7.",
+        "username": "hoaithu",
+        "id": 2
+    },
+    {
+        "email": "congnguyen@gmail.com",
+        "password": "$2a$10$DJOU1voKt2N2CFWXLv7MWeJvPgcdy6e8sz94oqccpErfL/OZjgauS",
+        "username": "congnguyen",
+        "id": 3
+    },
+    {
+        "email": "hanhanh@gmail.com",
+        "password": "$2a$10$Hpt1OHpZQWqDHqahOFxcMugJC2EffFpc8EOuvHlJENrR102HVIAX6",
+        "username": "hanhanh",
+        "id": 4
+    }
+]
