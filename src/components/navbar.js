@@ -6,12 +6,12 @@ import { getAllCate } from "../api/categoryapi";
 const Navbar = {
   async render() {
     const { data } = await getAllCate();
-    // const getAdmin = JSON.parse(localStorage.getItem("user"));
+   
 
     return /* html */ `
            <nav class="bg-gray-800">
     <div class="container flex">
-      <div class="bg-primary relative flex cursor-pointer items-center px-8 py-4 group">
+      <div class="bg-primary relative flex cursor-pointer items-center px-8 py-4 group z-50">
         <span class="text-white"> <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none"
             viewBox="0 0 24 24" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
@@ -51,11 +51,12 @@ const Navbar = {
         ${
           localStorage.getItem("user")
             ? ` 
-                 <div class="bg-gray-800 relative flex cursor-pointer items-center px-12 py-4 group ">
-        
+                 <div class="bg-white-800 relative flex cursor-pointer items-center px-12 py-4 group z-50 ">
+                 
+                 
                   <a href="" class="text-white ml-10" id="account-user">username</a>
                   <div
-                    class="absolute w-full left-0 top-full  shadow-md py-3 divide-y divide-gray-300 divide-dashed opacity-0 group-hover:opacity-100 transition duration-300 invisible group-hover:visible">
+                    class="absolute w-full left-0 top-full bg-white shadow-md py-3 divide-y divide-gray-300 divide-dashed opacity-0 group-hover:opacity-100 transition duration-300 invisible group-hover:visible">
                     
                    
                     ${

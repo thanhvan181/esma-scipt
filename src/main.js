@@ -26,6 +26,8 @@ import EditBlogPage from './pages/admin/blog/editblogPage';
 import ListOrder from "./pages/admin/order/listorder";
 import EditOrder from "./pages/admin/order/editorder";
 import YourOrderPage from "./pages/yourorderPage"
+import OrderDetailPage from "./pages/orderDetailsPage";
+
 
 
 
@@ -136,6 +138,10 @@ router.on({
   "/yourorder": () => {
     renders(YourOrderPage);
 
+  },
+  "/orderdetail/:id" : ({data}) => {
+    renders(OrderDetailPage, data.id);
   }
+
 });
 router.resolve();

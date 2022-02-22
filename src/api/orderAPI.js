@@ -9,6 +9,7 @@ export const list = () => {
   return axiosClient.get(url);
 };
 export const listone = (id) => {
+  console.log("Id", id);
   const url = `orders/?userId=${id}`;
   return axiosClient.get(url);
 };

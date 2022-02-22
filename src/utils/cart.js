@@ -67,12 +67,10 @@ export const getTotalItems = () => {
   if (localStorage.getItem("cart")) {
     cart = getLocalStorage("cart");
   }
-  let total = 0;
-  cart.forEach((item) => {
-    total += item.quantity;
-  });
+  
+  
 
-  return total;
+  return cart.length;
 };
 
 export const updateQuantityItem = (selectorId, quantity) => {
